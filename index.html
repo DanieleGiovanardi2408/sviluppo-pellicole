@@ -156,6 +156,54 @@
   .fb .msg.err{color:var(--push);display:block}
 
   footer{margin-top:24px;font-size:.78rem;color:var(--faint);text-align:center;line-height:1.7}
+
+  /* tabs */
+  .tabs{display:flex;gap:6px;background:var(--chip);border:1px solid var(--line);border-radius:13px;
+        padding:5px;margin-top:16px}
+  .tab{flex:1;min-height:44px;border:none;border-radius:9px;background:transparent;color:var(--muted);
+       font-size:.98rem;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px}
+  .tab.active{background:linear-gradient(180deg,var(--accent2),var(--accent));color:#1a1206}
+  .hide{display:none!important}
+
+  /* chat */
+  .chat{padding:0;overflow:hidden}
+  .chatlog{display:flex;flex-direction:column;gap:10px;padding:16px;min-height:220px;max-height:62vh;overflow-y:auto}
+  .msg{max-width:88%;padding:10px 13px;border-radius:14px;font-size:.96rem;line-height:1.45;word-wrap:break-word}
+  .msg.user{align-self:flex-end;background:linear-gradient(180deg,var(--accent2),var(--accent));
+            color:#1a1206;border-bottom-right-radius:5px;font-weight:600}
+  .msg.bot{align-self:flex-start;background:var(--chip);border:1px solid var(--line);border-bottom-left-radius:5px}
+  .msg.bot a{color:var(--accent2)}
+  .msg.card{max-width:100%;align-self:stretch;padding:0;background:transparent;border:none}
+  .rcard{background:#0f1117;border:1px solid var(--line2);border-radius:14px;overflow:hidden}
+  .rcard .rtop{padding:12px 15px;border-bottom:1px solid var(--line);display:flex;align-items:center;
+               justify-content:space-between;gap:10px}
+  .rcard .rtime{font-family:var(--mono);font-size:1.95rem;font-weight:700;color:var(--accent2);
+                text-shadow:0 0 16px var(--glow)}
+  .rcard .rtime small{font-size:.95rem;color:var(--muted)}
+  .rcard .rbody{padding:12px 15px;font-size:.9rem}
+  .rcard .rrow{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:9px}
+  .rcard .tag{background:var(--chip);border:1px solid var(--line);border-radius:8px;padding:4px 9px;font-size:.82rem}
+  .rcard .ragi{color:#d8dee8;margin-bottom:8px}
+  .rcard .rsrc{font-size:.76rem;color:var(--faint);word-break:break-word}
+  .rcard .rsrc a{color:var(--faint);text-decoration:underline}
+  .mtimer{display:flex;align-items:center;gap:10px;margin-top:10px;padding-top:11px;border-top:1px solid var(--line)}
+  .mtimer .md{font-family:var(--mono);font-size:1.5rem;font-weight:700;min-width:74px}
+  .mtimer button{min-height:40px;padding:0 14px;border:none;border-radius:10px;font-weight:700;cursor:pointer;
+       color:#1a1206;background:linear-gradient(180deg,var(--accent2),var(--accent))}
+  .mtimer button.g{background:var(--chip);color:var(--txt);border:1px solid var(--line2)}
+  .mtimer .mcue{font-weight:800;letter-spacing:3px;color:var(--accent);opacity:0;font-size:.8rem;transition:opacity .12s}
+  .mtimer .mcue.on{opacity:1}
+  .quick{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 10px}
+  .quick button{background:var(--chip);border:1px solid var(--line2);color:var(--txt);border-radius:999px;
+       padding:8px 13px;font-size:.88rem;cursor:pointer}
+  .quick button:hover{border-color:var(--accent);color:var(--accent2)}
+  .chatbar{display:flex;gap:9px;padding:12px 14px;border-top:1px solid var(--line);background:var(--card-b)}
+  .chatbar input{flex:1;min-height:48px;background:var(--chip);color:var(--txt);border:1px solid var(--line2);
+       border-radius:12px;padding:12px 14px;font-size:1rem;font-family:inherit}
+  .chatbar input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+  .chatbar button{flex:none;width:52px;border:none;border-radius:12px;cursor:pointer;color:#1a1206;
+       background:linear-gradient(180deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center}
+  .chatbar button svg{width:22px;height:22px}
 </style>
 </head>
 <body>
@@ -175,6 +223,27 @@
     <div class="filmstrip" aria-hidden="true"></div>
   </header>
 
+  <div class="tabs">
+    <button class="tab active" id="tab-btn-chat" type="button">Chat</button>
+    <button class="tab" id="tab-btn-manual" type="button">Tendine</button>
+  </div>
+
+  <div id="tab-chat">
+    <div class="card chat">
+      <div class="chatlog" id="chatlog"></div>
+      <div class="quick" id="quick"></div>
+      <div class="chatbar">
+        <input id="chatin" type="text" autocomplete="off" enterkeyhint="send"
+               placeholder="Es: HP5 a 800 in Rodinal">
+        <button id="chatsend" type="button" aria-label="Invia">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-manual" class="hide">
   <div class="card">
     <div class="field">
       <label class="lbl" for="film">Pellicola</label>
@@ -236,6 +305,7 @@
 
     <div class="src" id="r-src"></div>
     <div class="fallback" id="r-compare"></div>
+  </div>
   </div>
 
   <div class="card sec">
@@ -589,6 +659,248 @@
   populateFormats();populateDevs();populateDils();populateEis();render();
   $("ftcount").textContent=DB.meta.filmCount+" pellicole · "+DB.meta.recipeCount+
     " combinazioni · dati "+DB.meta.generated;
+
+  // ===================== CHAT NLP (motore locale) =====================
+  // Predisposto per un LLM vero: quando LLM_ENABLED diventa true, le frasi non
+  // capite vengono inviate a /api/chat (Vercel Function che tiene nascosta la
+  // API key). Per ora gira tutto in locale: gratis e non inventa mai i tempi.
+  var LLM_ENABLED=false;
+
+  var FILM_ALIASES=[
+    ["ilford-delta-3200",["delta 3200","delta3200"]],
+    ["ilford-delta-400",["delta 400","delta400"]],
+    ["ilford-delta-100",["delta 100","delta100"]],
+    ["ilford-hp5-plus",["hp5","hp 5","hp-5"]],
+    ["ilford-fp4-plus",["fp4","fp 4","fp-4"]],
+    ["ilford-pan-f-plus",["pan f","panf","pan-f"]],
+    ["kentmere-pan-400",["kentmere 400","kentmere400","kentmere pan 400"]],
+    ["kentmere-pan-100",["kentmere 100","kentmere100","kentmere pan 100"]],
+    ["kodak-tri-x-400",["tri-x","trix","tri x"]],
+    ["kodak-tmax-400",["tmax 400","t-max 400","t max 400","tmax400","400tmy"]],
+    ["kodak-tmax-100",["tmax 100","t-max 100","t max 100","tmax100","100tmx"]],
+    ["foma-fomapan-400",["fomapan 400","foma 400","fomapan400","foma action"]],
+    ["foma-fomapan-200",["fomapan 200","foma 200","fomapan200"]],
+    ["foma-fomapan-100",["fomapan 100","foma 100","fomapan100"]]
+  ];
+  var DEV_ALIASES=[
+    ["rodinal",["rodinal","adonal","r09","r-09"]],
+    ["d76",["d76","d-76","d 76"]],
+    ["id11",["id11","id-11","id 11"]],
+    ["xtol",["xtol","x-tol","x tol"]],
+    ["hc110",["hc110","hc-110","hc 110"]],
+    ["ddx",["ddx","dd-x","dd x","ilfotec dd-x","ilfotec ddx"]],
+    ["ilfosol3",["ilfosol 3","ilfosol3","ilfosol"]],
+    ["ilfotec-hc",["ilfotec hc","ilfotec-hc"]],
+    ["ilfotec-lc29",["lc29","lc-29","lc 29","ilfotec lc29"]],
+    ["microphen",["microphen"]],
+    ["perceptol",["perceptol"]],
+    ["tmax-rs",["tmax rs","t-max rs","tmax-rs"]],
+    ["tmax-dev",["tmax dev","t-max dev","tmax developer","t-max developer","tmax","t-max"]],
+    ["fomadon-lqn",["fomadon lqn","lqn"]],
+    ["fomadon-excel",["fomadon excel"]],
+    ["fomadon-p",["fomadon p"]]
+  ];
+  var KNOWN_EI=[25,32,40,50,64,80,100,125,160,200,250,320,400,500,640,800,1000,1250,1600,2400,3200,6400,12500,25000];
+  var SYMPTOMS=[
+    [/(dens|troppo scur|negativi scuri|nere)/,"Negativi densi/scuri = di solito sovrasviluppo o sovraesposizione. Riduci il tempo del 10-15%, oppure controlla l'esposizione."],
+    [/(chiar|sottil|trasparent|slavat)/,"Negativi chiari/sottili = sottosviluppo o sottoesposizione. Aumenta il tempo del 10-15%, oppure esponi di piu (EI piu basso)."],
+    [/(contrast)/,"Troppo contrasto = sovrasviluppo: riduci il tempo o agita meno. Poco contrasto = il contrario, aumenta il tempo."],
+    [/(piatt|spent|grigi)/,"Immagine piatta = sottosviluppo. Aumenta il tempo o la temperatura di 1 grado."],
+    [/(ombre|shadow)/,"Ombre vuote = sottoesposizione (le ombre dipendono dall'esposizione, non dallo sviluppo). Esponi di piu, abbassa l'EI."],
+    [/(gran)/,"Grana eccessiva = sviluppo caldo/lungo, rivelatore attivo (Rodinal) o push spinto. Usa D-76/XTOL/Perceptol e temperatura piu bassa."],
+    [/(alon|striatur|surge)/,"Aloni/striature dai fori = troppa agitazione. Agita piu dolcemente e meno spesso."],
+    [/(boll|puntin)/,"Macchioline tonde = bolle d'aria. A inizio sviluppo batti la tank sul piano per staccarle."],
+    [/(velo|lattigin|fog)/,"Velo o aspetto lattiginoso = chimica esausta o fissaggio insufficiente. Chimica fresca; se lattiginoso, rifissa."]
+  ];
+  var COMMON_FILMS=["HP5","Tri-X","FP4","Delta 400","T-Max 400","Fomapan 400"];
+  var COMMON_DEVS=["Rodinal","Kodak D-76","HC-110","XTOL","DD-X","Ilfosol 3"];
+
+  var _ac=null;
+  function beepC(f,d){try{var C=window.AudioContext||window.webkitAudioContext;if(!C)return;
+    _ac=_ac||new C();var o=_ac.createOscillator(),g=_ac.createGain();o.frequency.value=f;
+    o.connect(g);g.connect(_ac.destination);g.gain.setValueAtTime(.25,_ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(.0001,_ac.currentTime+d);o.start();o.stop(_ac.currentTime+d);}catch(e){}}
+
+  var clog=$("chatlog"), cin=$("chatin");
+  function scrollChat(){clog.scrollTop=clog.scrollHeight;}
+  function addNode(cls,html){var d=document.createElement("div");d.className=cls;d.innerHTML=html;
+    clog.appendChild(d);scrollChat();return d;}
+  function addUser(t){var d=document.createElement("div");d.className="msg user";d.textContent=t;
+    clog.appendChild(d);scrollChat();}
+  function addBot(html){return addNode("msg bot",html);}
+  function setQuick(items){var q=$("quick");q.innerHTML="";(items||[]).forEach(function(txt){
+    var b=document.createElement("button");b.type="button";b.textContent=txt;
+    b.onclick=function(){handle(txt);};q.appendChild(b);});}
+
+  function parseMsg(text){
+    var t=(" "+text.toLowerCase()+" ").replace(/[^\wàèéìòù\+:\-° ]/g," ").replace(/\s+/g," ");
+    var ext={};
+    var mt=t.match(/(\d{1,2})\s*(?:°\s*c?|gradi|grad)\b/); if(!mt) mt=t.match(/\ba\s+(\d{1,2})\s*°/);
+    if(mt){var tv=+mt[1]; if(tv>=10&&tv<=35) ext.temp=tv;}
+    var md=t.match(/1\s*[\+:]\s*(\d{1,3})/), dil=null;
+    if(md){dil="1+"+md[1]; t=t.replace(md[0]," ");}
+    if(/\b(stock|puro|non diluit|liscio|undiluted|straight)\b/.test(t)) dil="stock";
+    var mab=t.match(/(?:hc[- ]?110|dil(?:uizione)?|dilution)\s*([ab])\b/); if(mab) dil=mab[1].toUpperCase();
+    if(dil) ext.dil=dil;
+    var i,j;
+    for(i=0;i<FILM_ALIASES.length&&!ext.film;i++){var fp=FILM_ALIASES[i][1];
+      for(j=0;j<fp.length;j++){if(t.indexOf(fp[j])>=0){ext.film=FILM_ALIASES[i][0];t=t.replace(fp[j]," ");break;}}}
+    for(i=0;i<DEV_ALIASES.length&&!ext.dev;i++){var dp=DEV_ALIASES[i][1];
+      for(j=0;j<dp.length;j++){if(t.indexOf(dp[j])>=0){ext.dev=DEV_ALIASES[i][0];t=t.replace(dp[j]," ");break;}}}
+    var mp=t.match(/(push|spint[ao]|tirat[ao]|pull)\s*([+-]?\d)?/);
+    if(mp){var n=mp[2]?Math.abs(parseInt(mp[2],10)):1; ext.pushStops=/pull|tirat/.test(mp[1])?-n:n;}
+    var me=t.match(/(?:iso|ei|asa)\s*(\d{2,5})/);
+    if(me && KNOWN_EI.indexOf(+me[1])>=0) ext.ei=+me[1];
+    if(ext.ei==null){var nums=t.match(/\b\d{2,5}\b/g)||[],best=null;
+      for(i=0;i<nums.length;i++){var v=+nums[i]; if(KNOWN_EI.indexOf(v)>=0 && v!==ext.temp) best=v;}
+      if(best!=null) ext.ei=best;}
+    if(/\b(135|35 ?mm)\b/.test(t)) ext.format="35mm";
+    else if(/\b(120|medio formato|6x6|6x7|6x45)\b/.test(t)) ext.format="120";
+    else if(/(piana|sheet|lastra|large format|4x5|8x10)/.test(t)) ext.format="sheet";
+    for(i=0;i<SYMPTOMS.length;i++){if(SYMPTOMS[i][0].test(t)){ext.symptom=SYMPTOMS[i][1];break;}}
+    ext.greet=/\b(ciao|salve|hey|hola|hello|buongiorno|buonasera|aiuto|help|come funziona|come si usa)\b/.test(t);
+    ext.thanks=/\b(grazie|thanks|ottimo|perfetto)\b/.test(t);
+    return ext;
+  }
+
+  var chatState={film:null,dev:null,dil:null,ei:null,temp:null,format:null};
+  function looksEmpty(e){return !e.film&&!e.dev&&!e.symptom&&e.ei==null&&!e.greet&&!e.thanks&&e.pushStops==null;}
+
+  function handle(text){
+    text=(""+text).trim(); if(!text) return;
+    addUser(text); setQuick([]);
+    var ext=parseMsg(text);
+    if(ext.greet && looksEmpty(Object.assign({},ext,{greet:false}))){ botWelcome(); return; }
+    if(ext.symptom && !ext.film && !ext.dev){ addBot(ext.symptom); return; }
+    if(ext.thanks && looksEmpty(Object.assign({},ext,{thanks:false}))){ addBot("Di niente! Buoni sviluppi."); return; }
+    if(looksEmpty(ext) && !chatState.film && !chatState.dev){
+      if(LLM_ENABLED){ askLLM(text); return; }
+      addBot("Non ho capito. Dimmi pellicola + rivelatore (+ ISO). Es: \"FP4 in D-76\".");
+      setQuick(["HP5 in Rodinal","Tri-X in HC-110","Negativi densi"]); return;
+    }
+    if(ext.film && ext.film!==chatState.film){chatState.film=ext.film;chatState.dil=null;chatState.ei=null;}
+    if(ext.dev && ext.dev!==chatState.dev){chatState.dev=ext.dev;chatState.dil=null;chatState.ei=null;}
+    if(ext.dil!=null) chatState.dil=ext.dil;
+    if(ext.ei!=null) chatState.ei=ext.ei;
+    if(ext.temp!=null) chatState.temp=ext.temp;
+    if(ext.format) chatState.format=ext.format;
+    if(ext.pushStops!=null && chatState.film){var f=filmById(chatState.film);
+      chatState.ei=Math.round(f.box*Math.pow(2,ext.pushStops));}
+    resolveAndRespond();
+  }
+
+  function resolveAndRespond(){
+    var st=chatState;
+    if(!st.film){ askFilm(st.dev); return; }
+    if(!st.dev){ askDev(); return; }
+    var f=filmById(st.film);
+    var base=DB.recipes.filter(function(r){return r.film===st.film&&r.dev===st.dev;});
+    if(base.length===0){ botNoData(f,st.dev); return; }
+    var dils=uniq(base.map(function(r){return r.dilution;}));
+    if(st.dil==null || dils.indexOf(st.dil)<0){
+      if(dils.length===1) st.dil=dils[0];
+      else { askDilution(f,st.dev,dils); return; }
+    }
+    var eis=uniq(base.filter(function(r){return r.dilution===st.dil;}).map(function(r){return r.ei;}))
+            .sort(function(a,b){return a-b;});
+    if(st.ei==null){
+      if(eis.indexOf(f.box)>=0) st.ei=f.box;
+      else if(eis.length===1) st.ei=eis[0];
+      else { askEi(f,eis,null); return; }
+    }
+    if(eis.indexOf(st.ei)<0){ var bad=st.ei; st.ei=null; askEi(f,eis,bad); return; }
+    var fmt0=(st.format&&f.formats.indexOf(st.format)>=0)?st.format:f.formats[0];
+    var cand=base.filter(function(r){return r.dilution===st.dil&&r.ei===st.ei;});
+    var rec=cand.filter(function(r){return r.formats.indexOf(fmt0)>=0;})[0]||cand[0];
+    botRecipe(f,rec,st.temp);
+  }
+
+  function askFilm(dev){ addBot(dev?("Con "+devName[dev]+", quale pellicola?"):"Quale pellicola? Scrivila o scegli:");
+    setQuick(COMMON_FILMS); }
+  function askDev(){ var f=filmById(chatState.film);
+    addBot("Per "+f.brand+" "+f.model+", con quale rivelatore?"); setQuick(COMMON_DEVS); }
+  function askDilution(f,dev,dils){ addBot("Che diluizione per "+f.model+" in "+devName[dev]+"?");
+    setQuick(dils.map(function(d){return d==="stock"?"Stock":(/^[AB]$/.test(d)?("Diluizione "+d):d);})); }
+  function askEi(f,eis,bad){
+    var parts=eis.map(function(ei){var sl=stopsLabel(ei,f.box);
+      var tg=sl.cls==="b-nom"?"box":(sl.txt.indexOf("Push")>=0?"push":"pull"); return ei+" ("+tg+")";});
+    addBot((bad?("A EI "+bad+" non ho il dato per questa combinazione. "):"")+
+      "A che ISO esposto sei? Disponibili: "+parts.join(", ")+".");
+    setQuick(eis.map(function(ei){return "EI "+ei;})); }
+  function botNoData(f,dev){
+    addBot("Non ho "+f.brand+" "+f.model+" in "+devName[dev]+" nei datasheet ufficiali. "+
+      "Puoi cercarla sul <a target='_blank' rel='noopener' href='"+mdcUrl(f,dev)+
+      "'>Massive Dev Chart</a>, oppure prova un altro rivelatore.");
+    setQuick(COMMON_DEVS); }
+  function botWelcome(){
+    addBot("Ciao! Dimmi pellicola, rivelatore ed eventualmente ISO e temperatura: ti do il tempo "+
+      "dai datasheet ufficiali. Esempi: \"HP5 a 800 in Rodinal\", \"Tri-X in HC-110 a 22°\". "+
+      "Puoi anche chiedermi i problemi: \"negativi densi\".");
+    setQuick(["HP5 a 400 in Rodinal","Tri-X in HC-110","Delta 3200 a 1600 in DD-X","Negativi densi"]); }
+
+  function botRecipe(f,rec,temp){
+    var sl=stopsLabel(rec.ei,f.box), T=(temp==null?20:temp);
+    var timeStr=fmt(rec.sec)+(rec.secMax?" <small>- "+fmt(rec.secMax)+"</small>":"");
+    var timerSec=rec.sec, compStr="";
+    if(Math.abs(T-20)>0.01){
+      var factor=Math.pow(DB.meta.tempCoeff,T-20);
+      var cs=Math.round(rec.sec*factor/DB.meta.roundSec)*DB.meta.roundSec; timerSec=cs;
+      compStr="<span class='tag'>A "+T+"°C &asymp; <b style='color:var(--accent2)'>"+fmt(cs)+"</b> (stima)</span>";
+    }
+    var src=srcOf[rec.src];
+    var html="<div class='rcard'>"+
+      "<div class='rtop'><div class='rtime'>"+timeStr+"</div><span class='badge "+sl.cls+"'>"+sl.txt+"</span></div>"+
+      "<div class='rbody'><div class='rrow'>"+
+        "<span class='tag'>"+f.brand+" "+f.model+"</span>"+
+        "<span class='tag'>"+devName[rec.dev]+"</span>"+
+        "<span class='tag'>"+DIL_LABEL(rec.dilution)+"</span>"+
+        "<span class='tag'>EI "+rec.ei+"</span><span class='tag'>"+T+"°C</span>"+compStr+
+      "</div>"+
+      (rec.secMax?"<div class='ragi' style='color:var(--muted);font-size:.84rem'>Il produttore indica un intervallo; il timer parte dal minimo.</div>":"")+
+      "<div class='ragi'><b>Agitazione.</b> "+agiText[rec.agi]+"</div>"+
+      (f.note?"<div class='ragi' style='color:var(--accent2);font-size:.84rem'>"+f.note+"</div>":"")+
+      "<div class='rsrc'>Fonte: <a target='_blank' rel='noopener' href='"+src.url+"'>"+src.title+"</a></div>"+
+      "<div class='mtimer' data-sec='"+timerSec+"'></div>"+
+      "</div></div>";
+    var node=addNode("msg card",html);
+    makeMiniTimer(node.querySelector(".mtimer"),timerSec);
+    setQuick([]);
+  }
+
+  function makeMiniTimer(box,sec){
+    box.innerHTML="<span class='md'></span><button type='button' class='go'>Avvia</button>"+
+      "<button type='button' class='g rs'>Azzera</button><span class='mcue'>AGITA</span>";
+    var md=box.querySelector(".md"),go=box.querySelector(".go"),rs=box.querySelector(".rs"),cue=box.querySelector(".mcue");
+    var total=sec,rem=sec,running=false,endAt=0,tick=null,lastMin=null;
+    function paint(){var r=Math.max(0,Math.ceil(rem));md.textContent=Math.floor(r/60)+":"+(r%60<10?"0":"")+(r%60);}
+    function stop(){running=false;go.textContent="Avvia";if(tick){clearInterval(tick);tick=null;}}
+    function loop(){rem=(endAt-Date.now())/1000;var cm=Math.ceil(rem);
+      if(rem<=0){rem=0;paint();stop();beepC(560,.5);setTimeout(function(){beepC(560,.5);},250);return;}
+      if(cm!==lastMin){lastMin=cm;if(cm%60===0&&cm<total&&cm>0){cue.classList.add("on");beepC(880,.12);
+        setTimeout(function(){cue.classList.remove("on");},700);}}
+      paint();}
+    function start(){if(rem<=0)rem=total;endAt=Date.now()+rem*1000;running=true;lastMin=null;
+      go.textContent="Pausa";if(_ac&&_ac.resume)_ac.resume();tick=setInterval(loop,200);}
+    go.onclick=function(){running?stop():start();};
+    rs.onclick=function(){stop();rem=total;paint();};
+    paint();
+  }
+
+  function askLLM(text){
+    fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({message:text})}).then(function(r){return r.json();})
+      .then(function(d){addBot((d&&d.reply)||"Non ho una risposta.");})
+      .catch(function(){addBot("Non ho capito. Prova con: pellicola + rivelatore + ISO.");});
+  }
+
+  function showTab(which){var chat=which==="chat";
+    $("tab-chat").classList.toggle("hide",!chat);$("tab-manual").classList.toggle("hide",chat);
+    $("tab-btn-chat").classList.toggle("active",chat);$("tab-btn-manual").classList.toggle("active",!chat);}
+  $("tab-btn-chat").onclick=function(){showTab("chat");};
+  $("tab-btn-manual").onclick=function(){showTab("manual");};
+  $("chatsend").onclick=function(){var v=cin.value;cin.value="";handle(v);};
+  cin.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();$("chatsend").click();}});
+  botWelcome();
 })();
 </script>
 </body>

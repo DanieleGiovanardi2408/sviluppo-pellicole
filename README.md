@@ -47,6 +47,28 @@ vercel --prod     # per pubblicare in produzione
 2. Su vercel.com → *Add New Project* → importa il repo.
 3. Framework Preset: **Other**. Lascia vuoti build/output. → *Deploy*.
 
+## Chat (NLP locale) e come aggiungere un LLM dopo
+
+L'app si apre sulla **Chat**: scrivi in linguaggio naturale (es. "HP5 a 800 in
+Rodinal", "Tri-X in HC-110 a 22°", "negativi densi") e ottieni la ricetta con
+timer. Il motore è **locale**: gratis, istantaneo, e non inventa mai i tempi
+(risponde solo dai datasheet; altrimenti rimanda al Massive Dev Chart). Quando
+manca un dato fa una domanda guidata (diluizione, ISO). C'è anche la scheda
+**Tendine** per chi preferisce i menu.
+
+Vuoi un LLM "vero" per le domande libere? È già predisposto:
+
+1. In `index.html` c'è `var LLM_ENABLED = false` e la funzione `askLLM()`, che
+   invia le frasi non capite a `/api/chat`.
+2. Crea una **Vercel Function** `api/chat.js` che inoltra il messaggio a un
+   servizio AI con piano gratuito (es. **Groq** o **Google Gemini** — NON ngrok,
+   che non è un'AI), tenendo la API key in una **variabile d'ambiente** Vercel
+   (`Settings → Environment Variables`), MAI nel codice del sito.
+3. Metti `LLM_ENABLED = true`.
+
+Regola d'oro: l'LLM risponde solo alle domande libere; i tempi di sviluppo li dà
+sempre il motore locale dai datasheet, così non si inventa nulla.
+
 ## Consigli + Feedback in inbox (opzionale)
 
 L'app include una sezione **Consigli** (diagnostica: negativi densi/chiari/contrastati →
