@@ -758,13 +758,17 @@
     else if(/\b(120|medio formato|6x6|6x7|6x45)\b/.test(t)) ext.format="120";
     else if(/(piana|sheet|lastra|large format|4x5|8x10)/.test(t)) ext.format="sheet";
     for(i=0;i<SYMPTOMS.length;i++){if(SYMPTOMS[i][0].test(t)){ext.symptom=SYMPTOMS[i][1];break;}}
+    if(/\b(ilford|harman)\b/.test(t)) ext.brand="Ilford";
+    else if(/\bkodak\b/.test(t)) ext.brand="Kodak";
+    else if(/\b(foma|fomapan)\b/.test(t)) ext.brand="Foma";
+    else if(/\bkentmere\b/.test(t)) ext.brand="Kentmere";
     ext.greet=/\b(ciao|salve|hey|hola|hello|buongiorno|buonasera|aiuto|help|come funziona|come si usa)\b/.test(t);
     ext.thanks=/\b(grazie|thanks|ottimo|perfetto)\b/.test(t);
     return ext;
   }
 
-  var chatState={film:null,dev:null,dil:null,ei:null,temp:null,format:null};
-  function looksEmpty(e){return !e.film&&!e.dev&&!e.symptom&&e.ei==null&&!e.greet&&!e.thanks&&e.pushStops==null;}
+  var chatState={film:null,dev:null,dil:null,ei:null,temp:null,format:null,brand:null};
+  function looksEmpty(e){return !e.film&&!e.dev&&!e.brand&&!e.symptom&&e.ei==null&&!e.greet&&!e.thanks&&e.pushStops==null;}
 
   function handle(text){
     text=(""+text).trim(); if(!text) return;
@@ -778,8 +782,15 @@
       addBot("Non ho capito. Dimmi pellicola + rivelatore (+ ISO). Es: \"FP4 in D-76\".");
       setQuick(["HP5 in Rodinal","Tri-X in HC-110","Negativi densi"]); return;
     }
-    if(ext.film && ext.film!==chatState.film){chatState.film=ext.film;chatState.dil=null;chatState.ei=null;}
-    if(ext.dev && ext.dev!==chatState.dev){chatState.dev=ext.dev;chatState.dil=null;chatState.ei=null;}
+    if(ext.brand && !ext.film && chatState.film){
+      var cf=filmById(chatState.film);
+      if(cf.brand!==ext.brand || (ext.ei!=null && cf.box!==ext.ei)){
+        chatState.film=null; chatState.dil=null; chatState.ei=null;
+      }
+    }
+    if(ext.film && ext.film!==chatState.film){ if(chatState.film){chatState.dil=null;chatState.ei=null;} chatState.film=ext.film; }
+    if(ext.dev && ext.dev!==chatState.dev){ if(chatState.dev){chatState.dil=null;chatState.ei=null;} chatState.dev=ext.dev; }
+    if(ext.brand) chatState.brand=ext.brand;
     if(ext.dil!=null) chatState.dil=ext.dil;
     if(ext.ei!=null) chatState.ei=ext.ei;
     if(ext.temp!=null) chatState.temp=ext.temp;
@@ -791,7 +802,14 @@
 
   function resolveAndRespond(){
     var st=chatState;
-    if(!st.film){ askFilm(st.dev); return; }
+    if(!st.film){
+      var cands=[];
+      if(st.brand && st.ei) cands=filmsByHint(st.brand,st.ei);
+      if(!cands.length && st.brand) cands=filmsByHint(st.brand,null);
+      if(!cands.length && st.ei) cands=filmsByHint(null,st.ei);
+      if(cands.length===1){ st.film=cands[0].id; }
+      else { askFilm(st.dev,cands,st.brand,st.ei); return; }
+    }
     if(!st.dev){ askDev(); return; }
     var f=filmById(st.film);
     var base=DB.recipes.filter(function(r){return r.film===st.film&&r.dev===st.dev;});
@@ -815,8 +833,24 @@
     botRecipe(f,rec,st.temp);
   }
 
-  function askFilm(dev){ addBot(dev?("Con "+devName[dev]+", quale pellicola?"):"Quale pellicola? Scrivila o scegli:");
-    setQuick(COMMON_FILMS); }
+  function shortName(f){return f.brand+" "+f.model.split(" (")[0];}
+  function filmsByHint(brand,speed){
+    return DB.films.filter(function(f){
+      if(brand && f.brand!==brand) return false;
+      if(speed && f.box!==speed) return false;
+      return true;
+    });
+  }
+  function askFilm(dev,cands,brand,speed){
+    var have=dev?(" (rivelatore: "+devName[dev]+")"):"";
+    if(cands && cands.length){
+      var lead=brand?(brand+(speed?(" a "+speed):"")+": quale pellicola?"):"Quale pellicola? Scegli:";
+      addBot(lead+have); setQuick(cands.map(shortName));
+    } else {
+      addBot(dev?("Mi manca solo la pellicola"+have+". Quale?"):"Quale pellicola? Scrivila o scegli:");
+      setQuick(COMMON_FILMS);
+    }
+  }
   function askDev(){ var f=filmById(chatState.film);
     addBot("Per "+f.brand+" "+f.model+", con quale rivelatore?"); setQuick(COMMON_DEVS); }
   function askDilution(f,dev,dils){ addBot("Che diluizione per "+f.model+" in "+devName[dev]+"?");
