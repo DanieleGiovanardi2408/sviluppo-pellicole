@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sviluppo Pellicole B/N</title>
+<style>
+  :root{
+    --bg:#0e1013; --card:#171a20; --card2:#1f232b; --line:#2c313b;
+    --txt:#eef1f6; --muted:#9aa3b2; --accent:#f0a830; --accent-d:#caa;
+    --push:#ff6b5e; --pull:#5ea0ff; --ok:#54c98a; --radius:14px;
+    font-synthesis:none;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--txt); -webkit-text-size-adjust:100%;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.5; padding:env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 40px);
+  }
+  .wrap{max-width:560px;margin:0 auto}
+  header{padding:26px 2px 10px}
+  h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:.92rem;margin:0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+        padding:16px;margin-top:16px}
+  .field{margin:0 0 14px}
+  .field:last-child{margin-bottom:0}
+  label.lbl{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.6px;
+            color:var(--muted);margin:0 0 6px}
+  select{
+    width:100%;min-height:48px;background:var(--card2);color:var(--txt);
+    border:1px solid var(--line);border-radius:10px;padding:11px 38px 11px 13px;
+    font-size:1.05rem;appearance:none;-webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;background-position:right 13px center;
+  }
+  select:disabled{opacity:.4}
+  select:focus{outline:none;border-color:var(--accent)}
+  .temp-row{display:flex;align-items:center;gap:14px}
+  .temp-row input[type=range]{flex:1;accent-color:var(--accent);height:30px}
+  .temp-val{font-variant-numeric:tabular-nums;font-size:1.1rem;min-width:62px;text-align:right}
+  .badge{display:inline-block;font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px;
+         vertical-align:middle;margin-left:7px}
+  .b-nom{background:#2a3340;color:#cfe0ff}
+  .b-push{background:rgba(255,107,94,.16);color:var(--push)}
+  .b-pull{background:rgba(94,160,255,.16);color:var(--pull)}
+
+  /* result */
+  #result{display:none}
+  .recipe{text-align:center;padding:6px 0 2px}
+  .recipe .time{font-size:3.5rem;font-weight:700;font-variant-numeric:tabular-nums;
+                line-height:1.05;letter-spacing:1px}
+  .recipe .time small{font-size:1.3rem;color:var(--muted);font-weight:600}
+  .recipe .range-note{color:var(--muted);font-size:.85rem;margin-top:2px}
+  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+  .mbox{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .mbox .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .mbox .v{font-size:1.05rem;margin-top:2px}
+  .agit{background:var(--card2);border:1px solid var(--line);border-radius:10px;
+        padding:11px 13px;margin-top:10px;font-size:.92rem;color:#d7dde7}
+  .note{font-size:.85rem;color:var(--accent-d);margin-top:10px}
+  .comp{margin-top:12px;padding:11px 13px;border:1px dashed var(--accent);border-radius:10px;
+        background:rgba(240,168,48,.06);font-size:.95rem}
+  .comp b{color:var(--accent)}
+
+  /* timer */
+  .timer{margin-top:14px;text-align:center}
+  .tdisplay{font-size:2.6rem;font-weight:700;font-variant-numeric:tabular-nums}
+  .tbtns{display:flex;gap:10px;margin-top:10px}
+  button.t{flex:1;min-height:50px;border:none;border-radius:11px;font-size:1.02rem;font-weight:600;
+           color:#15171c;background:var(--accent)}
+  button.t.sec{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
+  button.t:active{transform:translateY(1px)}
+  .agita-cue{margin-top:8px;height:22px;font-weight:700;letter-spacing:3px;color:var(--accent);opacity:0;transition:opacity .15s}
+  .agita-cue.on{opacity:1}
+
+  .fallback{margin-top:16px;font-size:.9rem;color:var(--muted)}
+  a{color:var(--accent)}
+  .src{font-size:.8rem;color:var(--muted);margin-top:12px;word-break:break-word}
+  footer{margin-top:22px;font-size:.78rem;color:#6b7382;text-align:center;line-height:1.6}
+  .warn{display:none;background:rgba(255,107,94,.1);border:1px solid var(--push);
+        border-radius:10px;padding:12px;margin-top:14px;font-size:.92rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Sviluppo Pellicole B/N</h1>
+    <p class="sub">Tempi di sviluppo dai datasheet ufficiali dei produttori.</p>
+  </header>
+
+  <div class="card">
+    <div class="field">
+      <label class="lbl" for="film">Pellicola</label>
+      <select id="film"></select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="format">Formato</label>
+      <select id="format"></select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="dev">Rivelatore</label>
+      <select id="dev"></select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="dil">Diluizione</label>
+      <select id="dil"></select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="ei">ISO esposto (EI) <span id="eihint" class="badge b-nom" style="display:none"></span></label>
+      <select id="ei"></select>
+    </div>
+    <div class="field">
+      <label class="lbl" for="temp">Temperatura</label>
+      <div class="temp-row">
+        <input type="range" id="temp" min="18" max="24" step="0.5" value="20">
+        <span class="temp-val" id="tempval">20 °C</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="warn" id="warn"></div>
+
+  <div class="card" id="result">
+    <div class="recipe">
+      <div class="time" id="time">--:--</div>
+      <div class="range-note" id="rangenote"></div>
+    </div>
+    <div class="comp" id="comp" style="display:none"></div>
+    <div class="meta-grid">
+      <div class="mbox"><div class="k">Diluizione</div><div class="v" id="r-dil">—</div></div>
+      <div class="mbox"><div class="k">Temperatura rif.</div><div class="v" id="r-temp">20 °C</div></div>
+    </div>
+    <div class="agit" id="r-agit"></div>
+    <div class="note" id="r-note" style="display:none"></div>
+
+    <div class="timer">
+      <div class="tdisplay" id="tdisplay">--:--</div>
+      <div class="agita-cue" id="agitacue">AGITA</div>
+      <div class="tbtns">
+        <button class="t" id="tstart">Avvia</button>
+        <button class="t sec" id="treset">Azzera</button>
+      </div>
+    </div>
+
+    <div class="src" id="r-src"></div>
+    <div class="fallback" id="r-compare"></div>
+  </div>
+
+  <footer>
+    <div>I tempi sono punti di partenza dai datasheet ufficiali e possono richiedere
+      aggiustamenti secondo agitazione, acqua e gusto. La compensazione di temperatura è una stima.</div>
+    <div id="ftcount" style="margin-top:6px"></div>
+  </footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  "use strict";
+  var DB = window.DB;
+  if(!DB){document.body.innerHTML="<p style='padding:20px'>Errore: data.js non caricato.</p>";return;}
+
+  var $ = function(id){return document.getElementById(id);};
+  var filmSel=$("film"), formatSel=$("format"), devSel=$("dev"), dilSel=$("dil"),
+      eiSel=$("ei"), tempEl=$("temp"), tempVal=$("tempval");
+  var devName={}, srcOf=DB.sources, agiText=DB.agitation;
+  DB.developers.forEach(function(d){devName[d.id]=d.name;});
+  var devOrder={}; DB.developers.forEach(function(d,i){devOrder[d.id]=i;});
+
+  var FORMAT_LABEL={"35mm":"35mm","120":"120 (medio formato)","sheet":"Piana (sheet)"};
+  var DIL_LABEL=function(d){return d==="stock"?"Stock (non diluito)":d;};
+
+  // ---- store helpers (best-effort) ----
+  function save(k,v){try{localStorage.setItem("svp_"+k,v);}catch(e){}}
+  function load(k){try{return localStorage.getItem("svp_"+k);}catch(e){return null;}}
+
+  // ---- formatting ----
+  function fmt(sec){var m=Math.floor(sec/60),s=sec%60;return m+":"+(s<10?"0":"")+s;}
+  function filmById(id){return DB.films.find(function(f){return f.id===id;});}
+
+  var FRAC={0:"",1:"⅓",2:"⅔"}; // 1/3, 2/3
+  function stopsLabel(ei,box){
+    var stops=Math.log(ei/box)/Math.log(2);
+    var thirds=Math.round(stops*3);
+    if(thirds===0) return {cls:"b-nom",txt:"Nominale (box speed)"};
+    var sign=thirds>0?"+":"−";
+    var a=Math.abs(thirds), whole=Math.floor(a/3), f=a%3;
+    var mag=(whole?whole:"")+(FRAC[f]||"")||"0";
+    var kind=thirds>0?"Push":"Pull";
+    var cls=thirds>0?"b-push":"b-pull";
+    return {cls:cls, txt:kind+" "+sign+mag+" stop"};
+  }
+
+  // ---- recipe filtering ----
+  function recsFor(sel){
+    return DB.recipes.filter(function(r){
+      if(sel.film && r.film!==sel.film) return false;
+      if(sel.format && r.formats.indexOf(sel.format)<0) return false;
+      if(sel.dev && r.dev!==sel.dev) return false;
+      if(sel.dil!=null && r.dilution!==sel.dil) return false;
+      if(sel.ei!=null && r.ei!==sel.ei) return false;
+      return true;
+    });
+  }
+  function sel(){return {film:filmSel.value||null, format:formatSel.value||null,
+    dev:devSel.value||null, dil:dilSel.value||null,
+    ei:eiSel.value?parseInt(eiSel.value,10):null};}
+
+  function fill(elem,items,current){
+    elem.innerHTML="";
+    items.forEach(function(it){
+      var o=document.createElement("option");
+      o.value=it.value; o.textContent=it.label; elem.appendChild(o);
+    });
+    elem.disabled=items.length===0;
+    var vals=items.map(function(i){return i.value;});
+    if(current!=null && vals.indexOf(String(current))>=0) elem.value=String(current);
+  }
+
+  function uniq(arr){var s=[],seen={};arr.forEach(function(x){if(!seen[x]){seen[x]=1;s.push(x);}});return s;}
+
+  // ---- populate cascade ----
+  function populateFilms(){
+    filmSel.innerHTML="";
+    var byBrand={};
+    DB.films.forEach(function(f){(byBrand[f.brand]=byBrand[f.brand]||[]).push(f);});
+    Object.keys(byBrand).forEach(function(brand){
+      var og=document.createElement("optgroup"); og.label=brand;
+      byBrand[brand].forEach(function(f){
+        var o=document.createElement("option");
+        o.value=f.id; o.textContent=f.brand+" "+f.model; og.appendChild(o);
+      });
+      filmSel.appendChild(og);
+    });
+    var last=load("film");
+    if(last && filmById(last)) filmSel.value=last;
+  }
+  function populateFormats(){
+    var f=filmById(filmSel.value); if(!f)return;
+    var items=f.formats.map(function(x){return {value:x,label:FORMAT_LABEL[x]||x};});
+    fill(formatSel,items,formatSel.value||load("format"));
+  }
+  function populateDevs(){
+    var s=sel(); s.dev=s.dil=s.ei=null;
+    var devs=uniq(recsFor(s).map(function(r){return r.dev;}));
+    devs.sort(function(a,b){return devOrder[a]-devOrder[b];});
+    var items=devs.map(function(d){return {value:d,label:devName[d]};});
+    fill(devSel,items,devSel.value||load("dev"));
+  }
+  function populateDils(){
+    var s=sel(); s.dil=s.ei=null;
+    var dils=uniq(recsFor(s).map(function(r){return r.dilution;}));
+    var items=dils.map(function(d){return {value:d,label:DIL_LABEL(d)};});
+    fill(dilSel,items,dilSel.value);
+  }
+  function populateEis(){
+    var s=sel(); s.ei=null;
+    var f=filmById(s.film);
+    var eis=uniq(recsFor(s).map(function(r){return r.ei;}));
+    eis.sort(function(a,b){return a-b;});
+    var items=eis.map(function(ei){
+      var sl=stopsLabel(ei,f.box);
+      var tag = sl.cls==="b-nom" ? " · box" : (sl.txt.indexOf("Push")>=0?" · push":" · pull");
+      return {value:ei,label:"EI "+ei+tag};
+    });
+    fill(eiSel,items,eiSel.value);
+  }
+
+  // ---- render result ----
+  var timer=makeTimer();
+  function render(){
+    var s=sel();
+    tempVal.textContent=(+tempEl.value)+" °C";
+    var hint=$("eihint");
+    var complete = s.film&&s.format&&s.dev&&s.dil&&s.ei!=null;
+    if(!complete){ $("result").style.display="none"; $("warn").style.display="none"; hint.style.display="none"; return; }
+
+    var f=filmById(s.film);
+    var sl=stopsLabel(s.ei,f.box);
+    hint.style.display="inline-block"; hint.className="badge "+sl.cls; hint.textContent=sl.txt;
+
+    var rs=recsFor(s);
+    if(rs.length===0){
+      $("result").style.display="none";
+      var w=$("warn"); w.style.display="block";
+      w.innerHTML="Questa combinazione non è nel dataset dei datasheet ufficiali. "+
+        "Provala su <a target='_blank' rel='noopener' href='"+mdcUrl(f,s.dev)+"'>Massive Dev Chart</a>.";
+      return;
+    }
+    $("warn").style.display="none";
+    var r=rs[0];
+
+    // time
+    $("time").innerHTML = fmt(r.sec) + (r.secMax ? " <small>– "+fmt(r.secMax)+"</small>" : "");
+    $("rangenote").textContent = r.secMax ? "Il produttore indica un intervallo (min–max)." : "";
+
+    // temperature compensation
+    var T=+tempEl.value, base=r.sec, comp=$("comp");
+    if(Math.abs(T-20)>0.01){
+      var factor=Math.pow(DB.meta.tempCoeff, T-20);
+      var cs=Math.round(base*factor/DB.meta.roundSec)*DB.meta.roundSec;
+      comp.style.display="block";
+      comp.innerHTML="A "+T+" °C (stima): <b>"+fmt(cs)+"</b>"+
+        (r.secMax?" – "+fmt(Math.round(r.secMax*factor/DB.meta.roundSec)*DB.meta.roundSec):"")+
+        " &nbsp;<span style='color:var(--muted);font-size:.85em'>(20 °C = "+fmt(base)+")</span>";
+      timer.set(cs);
+    } else {
+      comp.style.display="none";
+      timer.set(base);
+    }
+
+    $("r-dil").textContent = DIL_LABEL(r.dilution);
+    $("r-temp").textContent = (+tempEl.value)+" °C";
+    $("r-agit").innerHTML = "<b>Agitazione.</b> "+agiText[r.agi];
+    var noteEl=$("r-note"), note=f.note||"";
+    if(note){noteEl.style.display="block";noteEl.textContent=note;} else noteEl.style.display="none";
+
+    var src=srcOf[r.src];
+    $("r-src").innerHTML="Fonte: <a target='_blank' rel='noopener' href='"+src.url+"'>"+src.title+"</a>";
+    $("r-compare").innerHTML="Vuoi confrontare? <a target='_blank' rel='noopener' href='"+
+      mdcUrl(f,r.dev)+"'>Apri su Massive Dev Chart</a>.";
+
+    $("result").style.display="block";
+
+    save("film",s.film);save("format",s.format);save("dev",s.dev);save("temp",tempEl.value);
+  }
+
+  function mdcUrl(f,dev){
+    var d=(devName[dev]||"").split(" / ")[0].split(" (")[0];
+    return "https://www.digitaltruth.com/devchart.php?Film="+
+      encodeURIComponent(f.brand+" "+f.model.split(" (")[0])+
+      "&Developer="+encodeURIComponent(d)+"&mdc=Search&TempUnits=C";
+  }
+
+  // ---- timer module ----
+  function makeTimer(){
+    var total=0, remaining=0, running=false, endAt=0, tick=null, lastMin=null;
+    var disp=$("tdisplay"), startBtn=$("tstart"), resetBtn=$("treset"), cue=$("agitacue");
+    function paint(){disp.textContent=fmt(Math.max(0,Math.ceil(remaining)));}
+    function beep(freq,dur){
+      try{var C=window.AudioContext||window.webkitAudioContext;if(!C)return;
+        var ac=makeTimer._ac||(makeTimer._ac=new C());
+        var o=ac.createOscillator(),g=ac.createGain();
+        o.frequency.value=freq;o.connect(g);g.connect(ac.destination);
+        g.gain.setValueAtTime(.25,ac.currentTime);
+        g.gain.exponentialRampToValueAtTime(.0001,ac.currentTime+dur);
+        o.start();o.stop(ac.currentTime+dur);}catch(e){}
+    }
+    function flashCue(){cue.classList.add("on");beep(880,.12);setTimeout(function(){cue.classList.remove("on");},700);}
+    function loop(){
+      remaining=(endAt-Date.now())/1000;
+      var cm=Math.ceil(remaining);
+      if(remaining<=0){remaining=0;paint();stop();beep(560,.5);setTimeout(function(){beep(560,.5);},250);return;}
+      // agitation cue at each whole minute boundary (not at the very start/end)
+      if(cm!==lastMin){lastMin=cm; if(cm%60===0 && cm<total && cm>0) flashCue();}
+      paint();
+    }
+    function start(){
+      if(total<=0)return;
+      if(remaining<=0)remaining=total;
+      endAt=Date.now()+remaining*1000; running=true; lastMin=null;
+      startBtn.textContent="Pausa"; if(makeTimer._ac&&makeTimer._ac.resume)makeTimer._ac.resume();
+      tick=setInterval(loop,200);
+    }
+    function stop(){running=false;startBtn.textContent="Avvia";if(tick){clearInterval(tick);tick=null;}}
+    startBtn.onclick=function(){running?stop():start();};
+    resetBtn.onclick=function(){stop();remaining=total;paint();};
+    return {set:function(sec){var wasRunning=running;stop();total=sec;remaining=sec;paint();
+      if(wasRunning){/*keep stopped on change*/}}};
+  }
+
+  // ---- wiring ----
+  filmSel.onchange=function(){populateFormats();populateDevs();populateDils();populateEis();render();};
+  formatSel.onchange=function(){populateDevs();populateDils();populateEis();render();};
+  devSel.onchange=function(){populateDils();populateEis();render();};
+  dilSel.onchange=function(){populateEis();render();};
+  eiSel.onchange=render;
+  tempEl.oninput=render;
+
+  // ---- init ----
+  populateFilms();
+  var t=load("temp"); if(t){tempEl.value=t;}
+  populateFormats();populateDevs();populateDils();populateEis();render();
+  $("ftcount").textContent=DB.meta.filmCount+" pellicole · "+DB.meta.recipeCount+
+    " combinazioni · dati "+DB.meta.generated;
+})();
+</script>
+</body>
+</html>

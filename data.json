@@ -1,0 +1,7793 @@
+{
+ "meta": {
+  "version": 1,
+  "generated": "2026-06-29",
+  "tempCoeff": 0.9,
+  "tempMin": 18,
+  "tempMax": 24,
+  "roundSec": 15,
+  "filmCount": 14,
+  "recipeCount": 498
+ },
+ "films": [
+  {
+   "id": "ilford-hp5-plus",
+   "brand": "Ilford",
+   "model": "HP5 Plus",
+   "box": 400,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ilford-fp4-plus",
+   "brand": "Ilford",
+   "model": "FP4 Plus",
+   "box": 125,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ilford-delta-100",
+   "brand": "Ilford",
+   "model": "Delta 100 Professional",
+   "box": 100,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ilford-delta-400",
+   "brand": "Ilford",
+   "model": "Delta 400 Professional",
+   "box": 400,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "ilford-delta-3200",
+   "brand": "Ilford",
+   "model": "Delta 3200 Professional",
+   "box": 3200,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": "ISO reale ~1000; classificata 3200. Pellicola pensata per essere esposta a EI alti."
+  },
+  {
+   "id": "ilford-pan-f-plus",
+   "brand": "Ilford",
+   "model": "Pan F Plus",
+   "box": 50,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "kentmere-pan-100",
+   "brand": "Kentmere",
+   "model": "Pan 100",
+   "box": 100,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "kentmere-pan-400",
+   "brand": "Kentmere",
+   "model": "Pan 400",
+   "box": 400,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "kodak-tri-x-400",
+   "brand": "Kodak",
+   "model": "Tri-X 400 (400TX)",
+   "box": 400,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": "Tempi small tank. EI 800 (1 stop): il datasheet indica di usare i tempi nominali."
+  },
+  {
+   "id": "kodak-tmax-400",
+   "brand": "Kodak",
+   "model": "T-Max 400 (TMY)",
+   "box": 400,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "kodak-tmax-100",
+   "brand": "Kodak",
+   "model": "T-Max 100 (TMX)",
+   "box": 100,
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "note": ""
+  },
+  {
+   "id": "foma-fomapan-100",
+   "brand": "Foma",
+   "model": "Fomapan 100 Classic",
+   "box": 100,
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "note": "Foma indica intervalli di tempo, non valori secchi."
+  },
+  {
+   "id": "foma-fomapan-200",
+   "brand": "Foma",
+   "model": "Fomapan 200 Creative",
+   "box": 200,
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "note": "Foma indica intervalli di tempo, non valori secchi."
+  },
+  {
+   "id": "foma-fomapan-400",
+   "brand": "Foma",
+   "model": "Fomapan 400 Action",
+   "box": 400,
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "note": "Foma indica intervalli di tempo, non valori secchi."
+  }
+ ],
+ "developers": [
+  {
+   "id": "rodinal",
+   "name": "Rodinal / Adonal / R09"
+  },
+  {
+   "id": "d76",
+   "name": "Kodak D-76"
+  },
+  {
+   "id": "id11",
+   "name": "Ilford ID-11"
+  },
+  {
+   "id": "xtol",
+   "name": "Kodak XTOL"
+  },
+  {
+   "id": "hc110",
+   "name": "Kodak HC-110"
+  },
+  {
+   "id": "ddx",
+   "name": "Ilford Ilfotec DD-X"
+  },
+  {
+   "id": "ilfosol3",
+   "name": "Ilford Ilfosol 3"
+  },
+  {
+   "id": "ilfotec-hc",
+   "name": "Ilford Ilfotec HC"
+  },
+  {
+   "id": "ilfotec-lc29",
+   "name": "Ilford Ilfotec LC29"
+  },
+  {
+   "id": "microphen",
+   "name": "Ilford Microphen"
+  },
+  {
+   "id": "perceptol",
+   "name": "Ilford Perceptol"
+  },
+  {
+   "id": "tmax-dev",
+   "name": "Kodak T-Max Developer"
+  },
+  {
+   "id": "tmax-rs",
+   "name": "Kodak T-Max RS"
+  },
+  {
+   "id": "fomadon-lqn",
+   "name": "Foma Fomadon LQN"
+  },
+  {
+   "id": "fomadon-excel",
+   "name": "Foma Fomadon Excel"
+  },
+  {
+   "id": "fomadon-p",
+   "name": "Foma Fomadon P"
+  }
+ ],
+ "agitation": {
+  "ilford": "Agitazione intermittente (spirale): capovolgi la tank 4 volte nei primi 10 s, poi 4 volte nei primi 10 s di ogni minuto successivo.",
+  "kodak": "Agitazione iniziale: 5-7 inversioni in 5 s. Poi ripeti l'agitazione ogni 30 s per tutta la durata.",
+  "foma": "Agitazione continua nei primi 30 s, poi nei primi 10 s di ogni minuto."
+ },
+ "sources": {
+  "hp5": {
+   "title": "ILFORD HP5 PLUS - Technical Information (HARMAN, Nov 2018)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1903/product/691/"
+  },
+  "fp4": {
+   "title": "ILFORD FP4 PLUS - Technical Information (HARMAN, Nov 2018)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1919/product/690/"
+  },
+  "delta100": {
+   "title": "ILFORD DELTA 100 PROFESSIONAL - Technical Information (HARMAN)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/3/product/679/"
+  },
+  "delta400": {
+   "title": "ILFORD DELTA 400 PROFESSIONAL - Technical Information (HARMAN, Nov 2018)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1915/product/684/"
+  },
+  "delta3200": {
+   "title": "ILFORD DELTA 3200 PROFESSIONAL - Technical Information (HARMAN)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1913/product/682/"
+  },
+  "panf": {
+   "title": "ILFORD PAN F PLUS - Technical Information (HARMAN)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1905/product/699/"
+  },
+  "kentmere100": {
+   "title": "KENTMERE PAN 100 - Technical Information (HARMAN)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1958/product/2131/"
+  },
+  "kentmere400": {
+   "title": "KENTMERE PAN 400 - Technical Information (HARMAN)",
+   "url": "https://www.ilfordphoto.com/amfile/file/download/file/1959/product/697/"
+  },
+  "trix": {
+   "title": "KODAK PROFESSIONAL TRI-X 400 - F-4017 (Kodak Alaris, 2016)",
+   "url": "https://business.kodakmoments.com/sites/default/files/files/resources/f4017_TriX.pdf"
+  },
+  "tmax": {
+   "title": "KODAK PROFESSIONAL T-MAX 100/400 - F-4016 (Kodak)",
+   "url": "https://www.freestylephoto.com/static/pdf/product_pdfs/kodak/Kodak_TMAX_Films.pdf"
+  },
+  "foma100": {
+   "title": "FOMAPAN 100 CLASSIC - Datasheet (FOMA)",
+   "url": "https://www.digitaltruth.com/products/foma_tech/Fomapan_100.pdf"
+  },
+  "foma200": {
+   "title": "FOMAPAN 200 CREATIVE - Datasheet (FOMA)",
+   "url": "https://www.digitaltruth.com/products/foma_tech/Fomapan_200.pdf"
+  },
+  "foma400": {
+   "title": "FOMAPAN 400 ACTION - Datasheet (FOMA)",
+   "url": "https://www.fomafoto.com/div/teknisk/film/F_pan_400_en.pdf"
+  }
+ },
+ "recipes": [
+  {
+   "id": 0,
+   "film": "ilford-hp5-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 1,
+   "film": "ilford-hp5-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 2,
+   "film": "ilford-hp5-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 3,
+   "film": "ilford-hp5-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 4,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 5,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 6,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 7,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 8,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 9,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1170,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 10,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 210,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 11,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 12,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 13,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 14,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 15,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 16,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 17,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 210,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 18,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 19,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 20,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 21,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 22,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 23,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 24,
+   "film": "ilford-hp5-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 25,
+   "film": "ilford-hp5-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 26,
+   "film": "ilford-hp5-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 27,
+   "film": "ilford-hp5-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 28,
+   "film": "ilford-hp5-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 29,
+   "film": "ilford-hp5-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 990,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 30,
+   "film": "ilford-hp5-plus",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 31,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 32,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 33,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 34,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 960,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 35,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 36,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 37,
+   "film": "ilford-hp5-plus",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 1380,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 38,
+   "film": "ilford-hp5-plus",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 250,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 39,
+   "film": "ilford-hp5-plus",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 40,
+   "film": "ilford-hp5-plus",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 1500,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 41,
+   "film": "ilford-hp5-plus",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 42,
+   "film": "ilford-hp5-plus",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 43,
+   "film": "ilford-hp5-plus",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 44,
+   "film": "ilford-hp5-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 45,
+   "film": "ilford-hp5-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 46,
+   "film": "ilford-hp5-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 47,
+   "film": "ilford-hp5-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 48,
+   "film": "ilford-hp5-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 49,
+   "film": "ilford-hp5-plus",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 1320,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 50,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 150,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 51,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 225,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 52,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 53,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 54,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 55,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 56,
+   "film": "ilford-hp5-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 57,
+   "film": "ilford-hp5-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 58,
+   "film": "ilford-hp5-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 59,
+   "film": "ilford-hp5-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 60,
+   "film": "ilford-hp5-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 61,
+   "film": "ilford-hp5-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 62,
+   "film": "ilford-hp5-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 63,
+   "film": "ilford-hp5-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 64,
+   "film": "ilford-hp5-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1140,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 65,
+   "film": "ilford-hp5-plus",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 66,
+   "film": "ilford-hp5-plus",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "hp5"
+  },
+  {
+   "id": 67,
+   "film": "ilford-fp4-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 68,
+   "film": "ilford-fp4-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 69,
+   "film": "ilford-fp4-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 70,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 255,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 71,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 72,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 73,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 74,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 75,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 76,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 77,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 78,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 79,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 80,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 81,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 82,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 83,
+   "film": "ilford-fp4-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 84,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 85,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 86,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 87,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 88,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 89,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 90,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 91,
+   "film": "ilford-fp4-plus",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 92,
+   "film": "ilford-fp4-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 93,
+   "film": "ilford-fp4-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 94,
+   "film": "ilford-fp4-plus",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 95,
+   "film": "ilford-fp4-plus",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 96,
+   "film": "ilford-fp4-plus",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 97,
+   "film": "ilford-fp4-plus",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 98,
+   "film": "ilford-fp4-plus",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 99,
+   "film": "ilford-fp4-plus",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 100,
+   "film": "ilford-fp4-plus",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 101,
+   "film": "ilford-fp4-plus",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 102,
+   "film": "ilford-fp4-plus",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 103,
+   "film": "ilford-fp4-plus",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 1260,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 104,
+   "film": "ilford-fp4-plus",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 105,
+   "film": "ilford-fp4-plus",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 106,
+   "film": "ilford-fp4-plus",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 107,
+   "film": "ilford-fp4-plus",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 108,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 109,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 110,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 111,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 112,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 113,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 114,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 115,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 960,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 116,
+   "film": "ilford-fp4-plus",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 117,
+   "film": "ilford-fp4-plus",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 118,
+   "film": "ilford-fp4-plus",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 119,
+   "film": "ilford-fp4-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 120,
+   "film": "ilford-fp4-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 121,
+   "film": "ilford-fp4-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 122,
+   "film": "ilford-fp4-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 123,
+   "film": "ilford-fp4-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 124,
+   "film": "ilford-fp4-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 125,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 125,
+   "film": "ilford-fp4-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "fp4"
+  },
+  {
+   "id": 126,
+   "film": "ilford-delta-100",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 127,
+   "film": "ilford-delta-100",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 128,
+   "film": "ilford-delta-100",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 129,
+   "film": "ilford-delta-100",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 130,
+   "film": "ilford-delta-100",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 131,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 132,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 133,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 134,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 135,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 136,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 137,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 138,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 139,
+   "film": "ilford-delta-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 140,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 141,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 142,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 143,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 144,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 145,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 146,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 147,
+   "film": "ilford-delta-100",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 148,
+   "film": "ilford-delta-100",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 149,
+   "film": "ilford-delta-100",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 150,
+   "film": "ilford-delta-100",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 151,
+   "film": "ilford-delta-100",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 152,
+   "film": "ilford-delta-100",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 153,
+   "film": "ilford-delta-100",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 154,
+   "film": "ilford-delta-100",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 155,
+   "film": "ilford-delta-100",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 156,
+   "film": "ilford-delta-100",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 157,
+   "film": "ilford-delta-100",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 158,
+   "film": "ilford-delta-100",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 960,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 159,
+   "film": "ilford-delta-100",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 1320,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 160,
+   "film": "ilford-delta-100",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 161,
+   "film": "ilford-delta-100",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 162,
+   "film": "ilford-delta-100",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 163,
+   "film": "ilford-delta-100",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 164,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 165,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 166,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 167,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 168,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 169,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 170,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 171,
+   "film": "ilford-delta-100",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 1320,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 172,
+   "film": "ilford-delta-100",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 173,
+   "film": "ilford-delta-100",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 174,
+   "film": "ilford-delta-100",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 175,
+   "film": "ilford-delta-100",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 176,
+   "film": "ilford-delta-100",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 177,
+   "film": "ilford-delta-100",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 178,
+   "film": "ilford-delta-100",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 179,
+   "film": "ilford-delta-100",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 180,
+   "film": "ilford-delta-100",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta100"
+  },
+  {
+   "id": 181,
+   "film": "ilford-delta-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 182,
+   "film": "ilford-delta-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 183,
+   "film": "ilford-delta-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 500,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 184,
+   "film": "ilford-delta-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 185,
+   "film": "ilford-delta-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 186,
+   "film": "ilford-delta-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 187,
+   "film": "ilford-delta-400",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 188,
+   "film": "ilford-delta-400",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 189,
+   "film": "ilford-delta-400",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 190,
+   "film": "ilford-delta-400",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 191,
+   "film": "ilford-delta-400",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 192,
+   "film": "ilford-delta-400",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1230,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 193,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 194,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 195,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 196,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 197,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 198,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 199,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 200,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 201,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 202,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 203,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 204,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 205,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 206,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 207,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 208,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 209,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 210,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 211,
+   "film": "ilford-delta-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 212,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 213,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 214,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 215,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 870,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 216,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1140,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 217,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 218,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 219,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1050,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 220,
+   "film": "ilford-delta-400",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 221,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 222,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 223,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 500,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 224,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 225,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 226,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 227,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 228,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 229,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 500,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 230,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 231,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 1140,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 232,
+   "film": "ilford-delta-400",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 960,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 233,
+   "film": "ilford-delta-400",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 234,
+   "film": "ilford-delta-400",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 250,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 235,
+   "film": "ilford-delta-400",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 236,
+   "film": "ilford-delta-400",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 237,
+   "film": "ilford-delta-400",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1110,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 238,
+   "film": "ilford-delta-400",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 239,
+   "film": "ilford-delta-400",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 240,
+   "film": "ilford-delta-400",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 241,
+   "film": "ilford-delta-400",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 242,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 243,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 244,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 245,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 870,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 246,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1140,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 247,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 248,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 249,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1050,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 250,
+   "film": "ilford-delta-400",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 251,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 252,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 253,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 254,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "A",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 255,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 256,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 257,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 258,
+   "film": "ilford-delta-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 259,
+   "film": "ilford-delta-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 260,
+   "film": "ilford-delta-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 261,
+   "film": "ilford-delta-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 500,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 262,
+   "film": "ilford-delta-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 263,
+   "film": "ilford-delta-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 264,
+   "film": "ilford-delta-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 265,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 266,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 267,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 500,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 268,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 269,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 270,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 271,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 272,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 273,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 500,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 274,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 275,
+   "film": "ilford-delta-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 1200,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta400"
+  },
+  {
+   "id": 276,
+   "film": "ilford-delta-3200",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 277,
+   "film": "ilford-delta-3200",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 278,
+   "film": "ilford-delta-3200",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 279,
+   "film": "ilford-delta-3200",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 280,
+   "film": "ilford-delta-3200",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 281,
+   "film": "ilford-delta-3200",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 12500,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 282,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 283,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 284,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 285,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 286,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 287,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 288,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 289,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 290,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 291,
+   "film": "ilford-delta-3200",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 1380,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 292,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 293,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 294,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 295,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 296,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 297,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 298,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 870,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 299,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 300,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 301,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 302,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 303,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 304,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 305,
+   "film": "ilford-delta-3200",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 870,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 306,
+   "film": "ilford-delta-3200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 307,
+   "film": "ilford-delta-3200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 308,
+   "film": "ilford-delta-3200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 309,
+   "film": "ilford-delta-3200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 310,
+   "film": "ilford-delta-3200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 311,
+   "film": "ilford-delta-3200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 12500,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 312,
+   "film": "ilford-delta-3200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 313,
+   "film": "ilford-delta-3200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 314,
+   "film": "ilford-delta-3200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 315,
+   "film": "ilford-delta-3200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 316,
+   "film": "ilford-delta-3200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 6400,
+   "sec": 720,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 317,
+   "film": "ilford-delta-3200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 12500,
+   "sec": 990,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 318,
+   "film": "ilford-delta-3200",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 319,
+   "film": "ilford-delta-3200",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 320,
+   "film": "ilford-delta-3200",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 321,
+   "film": "ilford-delta-3200",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 1080,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "delta3200"
+  },
+  {
+   "id": 322,
+   "film": "ilford-pan-f-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 323,
+   "film": "ilford-pan-f-plus",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 324,
+   "film": "ilford-pan-f-plus",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 325,
+   "film": "ilford-pan-f-plus",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 326,
+   "film": "ilford-pan-f-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 327,
+   "film": "ilford-pan-f-plus",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 328,
+   "film": "ilford-pan-f-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 329,
+   "film": "ilford-pan-f-plus",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 330,
+   "film": "ilford-pan-f-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 331,
+   "film": "ilford-pan-f-plus",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 332,
+   "film": "ilford-pan-f-plus",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 333,
+   "film": "ilford-pan-f-plus",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 334,
+   "film": "ilford-pan-f-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 335,
+   "film": "ilford-pan-f-plus",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 64,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 336,
+   "film": "ilford-pan-f-plus",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 337,
+   "film": "ilford-pan-f-plus",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 64,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 338,
+   "film": "ilford-pan-f-plus",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 339,
+   "film": "ilford-pan-f-plus",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 64,
+   "sec": 870,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 340,
+   "film": "ilford-pan-f-plus",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 341,
+   "film": "ilford-pan-f-plus",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 342,
+   "film": "ilford-pan-f-plus",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 343,
+   "film": "ilford-pan-f-plus",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 344,
+   "film": "ilford-pan-f-plus",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 345,
+   "film": "ilford-pan-f-plus",
+   "dev": "perceptol",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 346,
+   "film": "ilford-pan-f-plus",
+   "dev": "rodinal",
+   "dilution": "1+25",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 347,
+   "film": "ilford-pan-f-plus",
+   "dev": "rodinal",
+   "dilution": "1+50",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 348,
+   "film": "ilford-pan-f-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 349,
+   "film": "ilford-pan-f-plus",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 350,
+   "film": "ilford-pan-f-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 360,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 351,
+   "film": "ilford-pan-f-plus",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 352,
+   "film": "ilford-pan-f-plus",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 353,
+   "film": "ilford-pan-f-plus",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 354,
+   "film": "ilford-pan-f-plus",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 355,
+   "film": "ilford-pan-f-plus",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 356,
+   "film": "ilford-pan-f-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 25,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 357,
+   "film": "ilford-pan-f-plus",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 405,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "panf"
+  },
+  {
+   "id": 358,
+   "film": "kentmere-pan-100",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 359,
+   "film": "kentmere-pan-100",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 360,
+   "film": "kentmere-pan-100",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 361,
+   "film": "kentmere-pan-100",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 362,
+   "film": "kentmere-pan-100",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 363,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 364,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 365,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 366,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 367,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 368,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 240,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 369,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 370,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 330,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 371,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 372,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 373,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 450,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 374,
+   "film": "kentmere-pan-100",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 375,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 376,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 377,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 378,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 379,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 380,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 381,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 1050,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 382,
+   "film": "kentmere-pan-100",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 1260,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 383,
+   "film": "kentmere-pan-100",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 384,
+   "film": "kentmere-pan-100",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 385,
+   "film": "kentmere-pan-100",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 630,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 386,
+   "film": "kentmere-pan-100",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 387,
+   "film": "kentmere-pan-100",
+   "dev": "microphen",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 870,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 388,
+   "film": "kentmere-pan-100",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 389,
+   "film": "kentmere-pan-100",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 390,
+   "film": "kentmere-pan-100",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 810,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 391,
+   "film": "kentmere-pan-100",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 392,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 420,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 393,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 540,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 394,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 395,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 510,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 396,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 397,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 200,
+   "sec": 930,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 398,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 50,
+   "sec": 1050,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 399,
+   "film": "kentmere-pan-100",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 1260,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere100"
+  },
+  {
+   "id": 400,
+   "film": "kentmere-pan-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 690,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 401,
+   "film": "kentmere-pan-400",
+   "dev": "ddx",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 402,
+   "film": "kentmere-pan-400",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 403,
+   "film": "kentmere-pan-400",
+   "dev": "ilfosol3",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 404,
+   "film": "kentmere-pan-400",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 405,
+   "film": "kentmere-pan-400",
+   "dev": "ilfosol3",
+   "dilution": "1+14",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1500,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 406,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 407,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+15",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 408,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 409,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-hc",
+   "dilution": "1+31",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 410,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 270,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 411,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+9",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 390,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 412,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 413,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+19",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 414,
+   "film": "kentmere-pan-400",
+   "dev": "ilfotec-lc29",
+   "dilution": "1+29",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 660,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 415,
+   "film": "kentmere-pan-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 416,
+   "film": "kentmere-pan-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 780,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 417,
+   "film": "kentmere-pan-400",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 990,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 418,
+   "film": "kentmere-pan-400",
+   "dev": "id11",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1230,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 419,
+   "film": "kentmere-pan-400",
+   "dev": "id11",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 1530,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 420,
+   "film": "kentmere-pan-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 421,
+   "film": "kentmere-pan-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 600,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 422,
+   "film": "kentmere-pan-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 900,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 423,
+   "film": "kentmere-pan-400",
+   "dev": "microphen",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1140,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 424,
+   "film": "kentmere-pan-400",
+   "dev": "perceptol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 320,
+   "sec": 1380,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 425,
+   "film": "kentmere-pan-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 570,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 426,
+   "film": "kentmere-pan-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 750,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 427,
+   "film": "kentmere-pan-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 840,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 428,
+   "film": "kentmere-pan-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 1020,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 429,
+   "film": "kentmere-pan-400",
+   "dev": "d76",
+   "dilution": "1+3",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 1680,
+   "secMax": null,
+   "agi": "ilford",
+   "src": "kentmere400"
+  },
+  {
+   "id": 430,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-dev",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 431,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-dev",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 360,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 432,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-dev",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 525,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 433,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-rs",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 270,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 434,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-rs",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 270,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 435,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-rs",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 465,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 436,
+   "film": "kodak-tri-x-400",
+   "dev": "tmax-rs",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 570,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 437,
+   "film": "kodak-tri-x-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 225,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 438,
+   "film": "kodak-tri-x-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 225,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 439,
+   "film": "kodak-tri-x-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 360,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 440,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 405,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 441,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 405,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 442,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 570,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 443,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 660,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 444,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 585,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 445,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 585,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 446,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 795,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 447,
+   "film": "kodak-tri-x-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 960,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 448,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 449,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 420,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 450,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 585,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 451,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 690,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 452,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 453,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 800,
+   "sec": 540,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 454,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 1600,
+   "sec": 795,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 455,
+   "film": "kodak-tri-x-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 3200,
+   "sec": 930,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "trix"
+  },
+  {
+   "id": 456,
+   "film": "kodak-tmax-400",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 457,
+   "film": "kodak-tmax-400",
+   "dev": "tmax-rs",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 458,
+   "film": "kodak-tmax-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 390,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 459,
+   "film": "kodak-tmax-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm"
+   ],
+   "ei": 400,
+   "sec": 525,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 460,
+   "film": "kodak-tmax-400",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "120"
+   ],
+   "ei": 400,
+   "sec": 555,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 461,
+   "film": "kodak-tmax-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 462,
+   "film": "kodak-tmax-400",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 750,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 463,
+   "film": "kodak-tmax-400",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 400,
+   "sec": 360,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 464,
+   "film": "kodak-tmax-100",
+   "dev": "tmax-dev",
+   "dilution": "1+4",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 450,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 465,
+   "film": "kodak-tmax-100",
+   "dev": "tmax-rs",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 480,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 466,
+   "film": "kodak-tmax-100",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 450,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 467,
+   "film": "kodak-tmax-100",
+   "dev": "xtol",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 570,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 468,
+   "film": "kodak-tmax-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 390,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 469,
+   "film": "kodak-tmax-100",
+   "dev": "d76",
+   "dilution": "1+1",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 570,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 470,
+   "film": "kodak-tmax-100",
+   "dev": "hc110",
+   "dilution": "B",
+   "formats": [
+    "35mm",
+    "120"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": null,
+   "agi": "kodak",
+   "src": "tmax"
+  },
+  {
+   "id": 471,
+   "film": "foma-fomapan-100",
+   "dev": "fomadon-lqn",
+   "dilution": "1+10",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 420,
+   "secMax": 480,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 472,
+   "film": "foma-fomapan-100",
+   "dev": "rodinal",
+   "dilution": "1+40",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": 420,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 473,
+   "film": "foma-fomapan-100",
+   "dev": "fomadon-p",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 420,
+   "secMax": 480,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 474,
+   "film": "foma-fomapan-100",
+   "dev": "fomadon-excel",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 475,
+   "film": "foma-fomapan-100",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 476,
+   "film": "foma-fomapan-100",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 300,
+   "secMax": 420,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 477,
+   "film": "foma-fomapan-100",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 480,
+   "secMax": null,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 478,
+   "film": "foma-fomapan-100",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": 420,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 479,
+   "film": "foma-fomapan-100",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 100,
+   "sec": 360,
+   "secMax": 420,
+   "agi": "foma",
+   "src": "foma100"
+  },
+  {
+   "id": 480,
+   "film": "foma-fomapan-200",
+   "dev": "fomadon-lqn",
+   "dilution": "1+10",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 481,
+   "film": "foma-fomapan-200",
+   "dev": "rodinal",
+   "dilution": "1+40",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 480,
+   "secMax": 540,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 482,
+   "film": "foma-fomapan-200",
+   "dev": "fomadon-p",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 483,
+   "film": "foma-fomapan-200",
+   "dev": "fomadon-excel",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 360,
+   "secMax": null,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 484,
+   "film": "foma-fomapan-200",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 360,
+   "secMax": null,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 485,
+   "film": "foma-fomapan-200",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 486,
+   "film": "foma-fomapan-200",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 487,
+   "film": "foma-fomapan-200",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 488,
+   "film": "foma-fomapan-200",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 200,
+   "sec": 300,
+   "secMax": 360,
+   "agi": "foma",
+   "src": "foma200"
+  },
+  {
+   "id": 489,
+   "film": "foma-fomapan-400",
+   "dev": "fomadon-lqn",
+   "dilution": "1+10",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": 600,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 490,
+   "film": "foma-fomapan-400",
+   "dev": "rodinal",
+   "dilution": "1+40",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": 600,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 491,
+   "film": "foma-fomapan-400",
+   "dev": "fomadon-p",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 600,
+   "secMax": 660,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 492,
+   "film": "foma-fomapan-400",
+   "dev": "fomadon-excel",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 493,
+   "film": "foma-fomapan-400",
+   "dev": "xtol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": null,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 494,
+   "film": "foma-fomapan-400",
+   "dev": "microphen",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 480,
+   "secMax": 540,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 495,
+   "film": "foma-fomapan-400",
+   "dev": "perceptol",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 540,
+   "secMax": 600,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 496,
+   "film": "foma-fomapan-400",
+   "dev": "d76",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": 480,
+   "agi": "foma",
+   "src": "foma400"
+  },
+  {
+   "id": 497,
+   "film": "foma-fomapan-400",
+   "dev": "id11",
+   "dilution": "stock",
+   "formats": [
+    "35mm",
+    "120",
+    "sheet"
+   ],
+   "ei": 400,
+   "sec": 420,
+   "secMax": 480,
+   "agi": "foma",
+   "src": "foma400"
+  }
+ ]
+}
