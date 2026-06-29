@@ -69,6 +69,17 @@ Vuoi un LLM "vero" per le domande libere? È già predisposto:
 Regola d'oro: l'LLM risponde solo alle domande libere; i tempi di sviluppo li dà
 sempre il motore locale dai datasheet, così non si inventa nulla.
 
+## Strumenti (reciprocità + chimica)
+
+Scheda **Strumenti**:
+
+- **Reciprocità (pose lunghe):** dato il tempo misurato dall'esposimetro, calcola il
+  tempo da impostare davvero. Usa le formule dei datasheet — legge di potenza
+  Ilford/Kentmere (Ta = Tm^p), tabella Kodak (Tri-X, T-Max), fattore Schwarzschild
+  Foma. Vale oltre ~1 s.
+- **Diluizione:** dato il volume della tank e la diluizione (es. 1+50), dà i ml di
+  rivelatore e acqua, con avviso sulla quantità minima per i concentrati.
+
 ## Consigli + Feedback in inbox (opzionale)
 
 L'app include una sezione **Consigli** (diagnostica: negativi densi/chiari/contrastati →
@@ -123,10 +134,12 @@ T-Max / T-Max RS, Fomadon LQN/Excel/P.
 
 - **I tempi sono punti di partenza.** I produttori stessi dicono di tararli su
   agitazione, acqua e gusto personale.
-- **Compensazione temperatura = stima.** Usa il fattore `tempo × 0,90^(T−20)`,
-  validato contro la tabella multi-temperatura di Kodak (Tri-X) e l'esempio
-  ufficiale Ilford: scarto ≤ 15 s tra 18 e 24 °C, esatto a 22 °C. Fuori da
-  18–24 °C non è prevista. Il valore mostrato è arrotondato a 15 s.
+- **Temperatura: esatta dove c'è il dato, altrimenti stima.** Per Delta 100/400/3200,
+  T-Max 100/400 e Tri-X uso i tempi reali a 24 °C dei datasheet, interpolati tra 20 e
+  24 °C (l'app scrive "da datasheet"). Per le altre combinazioni uso la stima
+  `tempo × 0,90^(T−20)` (scritta "stima"), arrotondata a 15 s. Nota: la vecchia stima
+  unica sbagliava parecchio sulle pellicole T-grain (anche ~2 min su Delta 400) — ora
+  è corretta dove esiste il dato reale.
 - **Buchi voluti.** Alcune combinazioni non sono sui datasheet (es. Tri-X in
   Rodinal, o i tempi push numerici di T-Max): non vengono mostrate per non
   inventare numeri — l'app apre quella ricerca sul Massive Dev Chart.

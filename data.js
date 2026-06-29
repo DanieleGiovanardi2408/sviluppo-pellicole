@@ -21,7 +21,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.31
+   }
   },
   {
    "id": "ilford-fp4-plus",
@@ -32,7 +36,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.26
+   }
   },
   {
    "id": "ilford-delta-100",
@@ -43,7 +51,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.26
+   }
   },
   {
    "id": "ilford-delta-400",
@@ -54,7 +66,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.41
+   }
   },
   {
    "id": "ilford-delta-3200",
@@ -65,7 +81,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": "ISO reale ~1000; classificata 3200. Pellicola pensata per essere esposta a EI alti."
+   "note": "ISO reale ~1000; classificata 3200. Pellicola pensata per essere esposta a EI alti.",
+   "recip": {
+    "type": "power",
+    "p": 1.33
+   }
   },
   {
    "id": "ilford-pan-f-plus",
@@ -76,7 +96,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.33
+   }
   },
   {
    "id": "kentmere-pan-100",
@@ -87,7 +111,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.26
+   }
   },
   {
    "id": "kentmere-pan-400",
@@ -98,7 +126,11 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "power",
+    "p": 1.3
+   }
   },
   {
    "id": "kodak-tri-x-400",
@@ -109,7 +141,24 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": "Tempi small tank. EI 800 (1 stop): il datasheet indica di usare i tempi nominali."
+   "note": "Tempi small tank. EI 800 (1 stop): il datasheet indica di usare i tempi nominali.",
+   "recip": {
+    "type": "table",
+    "points": [
+     [
+      1,
+      2
+     ],
+     [
+      10,
+      50
+     ],
+     [
+      100,
+      1200
+     ]
+    ]
+   }
   },
   {
    "id": "kodak-tmax-400",
@@ -120,7 +169,24 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "table",
+    "points": [
+     [
+      1,
+      1.26
+     ],
+     [
+      10,
+      15
+     ],
+     [
+      100,
+      300
+     ]
+    ]
+   }
   },
   {
    "id": "kodak-tmax-100",
@@ -131,7 +197,24 @@ window.DB = {
     "35mm",
     "120"
    ],
-   "note": ""
+   "note": "",
+   "recip": {
+    "type": "table",
+    "points": [
+     [
+      1,
+      1.26
+     ],
+     [
+      10,
+      15
+     ],
+     [
+      100,
+      200
+     ]
+    ]
+   }
   },
   {
    "id": "foma-fomapan-100",
@@ -143,7 +226,24 @@ window.DB = {
     "120",
     "sheet"
    ],
-   "note": "Foma indica intervalli di tempo, non valori secchi."
+   "note": "Foma indica intervalli di tempo, non valori secchi.",
+   "recip": {
+    "type": "foma",
+    "points": [
+     [
+      1,
+      2
+     ],
+     [
+      10,
+      8
+     ],
+     [
+      100,
+      16
+     ]
+    ]
+   }
   },
   {
    "id": "foma-fomapan-200",
@@ -155,7 +255,24 @@ window.DB = {
     "120",
     "sheet"
    ],
-   "note": "Foma indica intervalli di tempo, non valori secchi."
+   "note": "Foma indica intervalli di tempo, non valori secchi.",
+   "recip": {
+    "type": "foma",
+    "points": [
+     [
+      1,
+      3
+     ],
+     [
+      10,
+      9
+     ],
+     [
+      100,
+      18
+     ]
+    ]
+   }
   },
   {
    "id": "foma-fomapan-400",
@@ -167,7 +284,24 @@ window.DB = {
     "120",
     "sheet"
    ],
-   "note": "Foma indica intervalli di tempo, non valori secchi."
+   "note": "Foma indica intervalli di tempo, non valori secchi.",
+   "recip": {
+    "type": "foma",
+    "points": [
+     [
+      1,
+      1.5
+     ],
+     [
+      10,
+      6
+     ],
+     [
+      100,
+      8
+     ]
+    ]
+   }
   }
  ],
  "developers": [
@@ -3024,7 +3158,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 270
   },
   {
    "id": 182,
@@ -3039,7 +3174,8 @@ window.DB = {
    "sec": 480,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 183,
@@ -3054,7 +3190,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 184,
@@ -3069,7 +3206,8 @@ window.DB = {
    "sec": 630,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 450
   },
   {
    "id": 185,
@@ -3084,7 +3222,8 @@ window.DB = {
    "sec": 810,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 570
   },
   {
    "id": 186,
@@ -3099,7 +3238,8 @@ window.DB = {
    "sec": 1080,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 780
   },
   {
    "id": 187,
@@ -3114,7 +3254,8 @@ window.DB = {
    "sec": 330,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 270
   },
   {
    "id": 188,
@@ -3129,7 +3270,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 360
   },
   {
    "id": 189,
@@ -3144,7 +3286,8 @@ window.DB = {
    "sec": 840,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 630
   },
   {
    "id": 190,
@@ -3159,7 +3302,8 @@ window.DB = {
    "sec": 480,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 360
   },
   {
    "id": 191,
@@ -3174,7 +3318,8 @@ window.DB = {
    "sec": 720,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 510
   },
   {
    "id": 192,
@@ -3189,7 +3334,8 @@ window.DB = {
    "sec": 1230,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 930
   },
   {
    "id": 193,
@@ -3219,7 +3365,8 @@ window.DB = {
    "sec": 330,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 270
   },
   {
    "id": 195,
@@ -3234,7 +3381,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 196,
@@ -3249,7 +3397,8 @@ window.DB = {
    "sec": 780,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 197,
@@ -3264,7 +3413,8 @@ window.DB = {
    "sec": 300,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 240
   },
   {
    "id": 198,
@@ -3279,7 +3429,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 300
   },
   {
    "id": 199,
@@ -3294,7 +3445,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 200,
@@ -3309,7 +3461,8 @@ window.DB = {
    "sec": 810,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 600
   },
   {
    "id": 201,
@@ -3339,7 +3492,8 @@ window.DB = {
    "sec": 330,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 270
   },
   {
    "id": 203,
@@ -3354,7 +3508,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 204,
@@ -3369,7 +3524,8 @@ window.DB = {
    "sec": 780,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 205,
@@ -3384,7 +3540,8 @@ window.DB = {
    "sec": 300,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 240
   },
   {
    "id": 206,
@@ -3399,7 +3556,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 300
   },
   {
    "id": 207,
@@ -3414,7 +3572,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 208,
@@ -3429,7 +3588,8 @@ window.DB = {
    "sec": 810,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 600
   },
   {
    "id": 209,
@@ -3444,7 +3604,8 @@ window.DB = {
    "sec": 510,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 210,
@@ -3459,7 +3620,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 450
   },
   {
    "id": 211,
@@ -3474,7 +3636,8 @@ window.DB = {
    "sec": 1020,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 660
   },
   {
    "id": 212,
@@ -3489,7 +3652,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 213,
@@ -3504,7 +3668,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 214,
@@ -3519,7 +3684,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 540
   },
   {
    "id": 215,
@@ -3534,7 +3700,8 @@ window.DB = {
    "sec": 870,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 216,
@@ -3549,7 +3716,8 @@ window.DB = {
    "sec": 1140,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 900
   },
   {
    "id": 217,
@@ -3564,7 +3732,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 218,
@@ -3579,7 +3748,8 @@ window.DB = {
    "sec": 840,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 219,
@@ -3594,7 +3764,8 @@ window.DB = {
    "sec": 1050,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 840
   },
   {
    "id": 220,
@@ -3609,7 +3780,8 @@ window.DB = {
    "sec": 1080,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 840
   },
   {
    "id": 221,
@@ -3624,7 +3796,8 @@ window.DB = {
    "sec": 300,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 240
   },
   {
    "id": 222,
@@ -3639,7 +3812,8 @@ window.DB = {
    "sec": 390,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 300
   },
   {
    "id": 223,
@@ -3654,7 +3828,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 360
   },
   {
    "id": 224,
@@ -3669,7 +3844,8 @@ window.DB = {
    "sec": 510,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 390
   },
   {
    "id": 225,
@@ -3684,7 +3860,8 @@ window.DB = {
    "sec": 630,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 450
   },
   {
    "id": 226,
@@ -3699,7 +3876,8 @@ window.DB = {
    "sec": 840,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 600
   },
   {
    "id": 227,
@@ -3714,7 +3892,8 @@ window.DB = {
    "sec": 510,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 228,
@@ -3729,7 +3908,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 540
   },
   {
    "id": 229,
@@ -3744,7 +3924,8 @@ window.DB = {
    "sec": 810,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 660
   },
   {
    "id": 230,
@@ -3759,7 +3940,8 @@ window.DB = {
    "sec": 930,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 720
   },
   {
    "id": 231,
@@ -3774,7 +3956,8 @@ window.DB = {
    "sec": 1140,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 930
   },
   {
    "id": 232,
@@ -3789,7 +3972,8 @@ window.DB = {
    "sec": 960,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 233,
@@ -3804,7 +3988,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 234,
@@ -3819,7 +4004,8 @@ window.DB = {
    "sec": 720,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 540
   },
   {
    "id": 235,
@@ -3834,7 +4020,8 @@ window.DB = {
    "sec": 750,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 540
   },
   {
    "id": 236,
@@ -3849,7 +4036,8 @@ window.DB = {
    "sec": 930,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 237,
@@ -3864,7 +4052,8 @@ window.DB = {
    "sec": 1110,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 870
   },
   {
    "id": 238,
@@ -3879,7 +4068,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 300
   },
   {
    "id": 239,
@@ -3894,7 +4084,8 @@ window.DB = {
    "sec": 540,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 240,
@@ -3909,7 +4100,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 570
   },
   {
    "id": 241,
@@ -3924,7 +4116,8 @@ window.DB = {
    "sec": 1200,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 960
   },
   {
    "id": 242,
@@ -3939,7 +4132,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 243,
@@ -3954,7 +4148,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 244,
@@ -3969,7 +4164,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 540
   },
   {
    "id": 245,
@@ -3984,7 +4180,8 @@ window.DB = {
    "sec": 870,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 246,
@@ -3999,7 +4196,8 @@ window.DB = {
    "sec": 1140,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 900
   },
   {
    "id": 247,
@@ -4014,7 +4212,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 248,
@@ -4029,7 +4228,8 @@ window.DB = {
    "sec": 840,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 249,
@@ -4044,7 +4244,8 @@ window.DB = {
    "sec": 1050,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 840
   },
   {
    "id": 250,
@@ -4059,7 +4260,8 @@ window.DB = {
    "sec": 1080,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 840
   },
   {
    "id": 251,
@@ -4089,7 +4291,8 @@ window.DB = {
    "sec": 330,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 270
   },
   {
    "id": 253,
@@ -4104,7 +4307,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 254,
@@ -4119,7 +4323,8 @@ window.DB = {
    "sec": 780,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 480
   },
   {
    "id": 255,
@@ -4134,7 +4339,8 @@ window.DB = {
    "sec": 300,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 240
   },
   {
    "id": 256,
@@ -4149,7 +4355,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 300
   },
   {
    "id": 257,
@@ -4164,7 +4371,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 258,
@@ -4179,7 +4387,8 @@ window.DB = {
    "sec": 810,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 600
   },
   {
    "id": 259,
@@ -4194,7 +4403,8 @@ window.DB = {
    "sec": 300,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 240
   },
   {
    "id": 260,
@@ -4209,7 +4419,8 @@ window.DB = {
    "sec": 390,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 300
   },
   {
    "id": 261,
@@ -4224,7 +4435,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 330
   },
   {
    "id": 262,
@@ -4239,7 +4451,8 @@ window.DB = {
    "sec": 510,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 420
   },
   {
    "id": 263,
@@ -4254,7 +4467,8 @@ window.DB = {
    "sec": 630,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 510
   },
   {
    "id": 264,
@@ -4269,7 +4483,8 @@ window.DB = {
    "sec": 810,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 660
   },
   {
    "id": 265,
@@ -4284,7 +4499,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 240
   },
   {
    "id": 266,
@@ -4299,7 +4515,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 270
   },
   {
    "id": 267,
@@ -4314,7 +4531,8 @@ window.DB = {
    "sec": 510,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 360
   },
   {
    "id": 268,
@@ -4329,7 +4547,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 450
   },
   {
    "id": 269,
@@ -4344,7 +4563,8 @@ window.DB = {
    "sec": 780,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 570
   },
   {
    "id": 270,
@@ -4359,7 +4579,8 @@ window.DB = {
    "sec": 1020,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 720
   },
   {
    "id": 271,
@@ -4374,7 +4595,8 @@ window.DB = {
    "sec": 540,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 390
   },
   {
    "id": 272,
@@ -4389,7 +4611,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 510
   },
   {
    "id": 273,
@@ -4404,7 +4627,8 @@ window.DB = {
    "sec": 780,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 570
   },
   {
    "id": 274,
@@ -4419,7 +4643,8 @@ window.DB = {
    "sec": 930,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 690
   },
   {
    "id": 275,
@@ -4434,7 +4659,8 @@ window.DB = {
    "sec": 1200,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta400"
+   "src": "delta400",
+   "sec24": 840
   },
   {
    "id": 276,
@@ -4464,7 +4690,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 300
   },
   {
    "id": 278,
@@ -4479,7 +4706,8 @@ window.DB = {
    "sec": 480,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 360
   },
   {
    "id": 279,
@@ -4494,7 +4722,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 420
   },
   {
    "id": 280,
@@ -4509,7 +4738,8 @@ window.DB = {
    "sec": 750,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 540
   },
   {
    "id": 281,
@@ -4524,7 +4754,8 @@ window.DB = {
    "sec": 1020,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 720
   },
   {
    "id": 282,
@@ -4539,7 +4770,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 330
   },
   {
    "id": 283,
@@ -4554,7 +4786,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 420
   },
   {
    "id": 284,
@@ -4569,7 +4802,8 @@ window.DB = {
    "sec": 600,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 480
   },
   {
    "id": 285,
@@ -4584,7 +4818,8 @@ window.DB = {
    "sec": 660,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 540
   },
   {
    "id": 286,
@@ -4599,7 +4834,8 @@ window.DB = {
    "sec": 1080,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 930
   },
   {
    "id": 287,
@@ -4899,7 +5135,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 360
   },
   {
    "id": 307,
@@ -4914,7 +5151,8 @@ window.DB = {
    "sec": 480,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 420
   },
   {
    "id": 308,
@@ -4929,7 +5167,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 480
   },
   {
    "id": 309,
@@ -4944,7 +5183,8 @@ window.DB = {
    "sec": 630,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 540
   },
   {
    "id": 310,
@@ -4959,7 +5199,8 @@ window.DB = {
    "sec": 780,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 660
   },
   {
    "id": 311,
@@ -4974,7 +5215,8 @@ window.DB = {
    "sec": 1020,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 810
   },
   {
    "id": 312,
@@ -5004,7 +5246,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 300
   },
   {
    "id": 314,
@@ -5019,7 +5262,8 @@ window.DB = {
    "sec": 480,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 360
   },
   {
    "id": 315,
@@ -5034,7 +5278,8 @@ window.DB = {
    "sec": 540,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 420
   },
   {
    "id": 316,
@@ -5049,7 +5294,8 @@ window.DB = {
    "sec": 720,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 570
   },
   {
    "id": 317,
@@ -5064,7 +5310,8 @@ window.DB = {
    "sec": 990,
    "secMax": null,
    "agi": "ilford",
-   "src": "delta3200"
+   "src": "delta3200",
+   "sec24": 810
   },
   {
    "id": 318,
@@ -6759,7 +7006,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 285
   },
   {
    "id": 431,
@@ -6774,7 +7022,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 285
   },
   {
    "id": 432,
@@ -6789,7 +7038,8 @@ window.DB = {
    "sec": 525,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 420
   },
   {
    "id": 433,
@@ -6804,7 +7054,8 @@ window.DB = {
    "sec": 270,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 210
   },
   {
    "id": 434,
@@ -6819,7 +7070,8 @@ window.DB = {
    "sec": 270,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 210
   },
   {
    "id": 435,
@@ -6834,7 +7086,8 @@ window.DB = {
    "sec": 465,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 360
   },
   {
    "id": 436,
@@ -6849,7 +7102,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 450
   },
   {
    "id": 437,
@@ -6864,7 +7118,8 @@ window.DB = {
    "sec": 225,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 150
   },
   {
    "id": 438,
@@ -6879,7 +7134,8 @@ window.DB = {
    "sec": 225,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 150
   },
   {
    "id": 439,
@@ -6894,7 +7150,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 255
   },
   {
    "id": 440,
@@ -6909,7 +7166,8 @@ window.DB = {
    "sec": 405,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 285
   },
   {
    "id": 441,
@@ -6924,7 +7182,8 @@ window.DB = {
    "sec": 405,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 285
   },
   {
    "id": 442,
@@ -6939,7 +7198,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 390
   },
   {
    "id": 443,
@@ -6954,7 +7214,8 @@ window.DB = {
    "sec": 660,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 450
   },
   {
    "id": 444,
@@ -6969,7 +7230,8 @@ window.DB = {
    "sec": 585,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 465
   },
   {
    "id": 445,
@@ -6984,7 +7246,8 @@ window.DB = {
    "sec": 585,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 465
   },
   {
    "id": 446,
@@ -6999,7 +7262,8 @@ window.DB = {
    "sec": 795,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 645
   },
   {
    "id": 447,
@@ -7014,7 +7278,8 @@ window.DB = {
    "sec": 960,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 765
   },
   {
    "id": 448,
@@ -7029,7 +7294,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 285
   },
   {
    "id": 449,
@@ -7044,7 +7310,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 285
   },
   {
    "id": 450,
@@ -7059,7 +7326,8 @@ window.DB = {
    "sec": 585,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 405
   },
   {
    "id": 451,
@@ -7074,7 +7342,8 @@ window.DB = {
    "sec": 690,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 480
   },
   {
    "id": 452,
@@ -7089,7 +7358,8 @@ window.DB = {
    "sec": 540,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 435
   },
   {
    "id": 453,
@@ -7104,7 +7374,8 @@ window.DB = {
    "sec": 540,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 435
   },
   {
    "id": 454,
@@ -7119,7 +7390,8 @@ window.DB = {
    "sec": 795,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 630
   },
   {
    "id": 455,
@@ -7134,7 +7406,8 @@ window.DB = {
    "sec": 930,
    "secMax": null,
    "agi": "kodak",
-   "src": "trix"
+   "src": "trix",
+   "sec24": 735
   },
   {
    "id": 456,
@@ -7149,7 +7422,8 @@ window.DB = {
    "sec": 420,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 360
   },
   {
    "id": 457,
@@ -7179,7 +7453,8 @@ window.DB = {
    "sec": 390,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 270
   },
   {
    "id": 459,
@@ -7193,7 +7468,8 @@ window.DB = {
    "sec": 525,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 420
   },
   {
    "id": 460,
@@ -7207,7 +7483,8 @@ window.DB = {
    "sec": 555,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 420
   },
   {
    "id": 461,
@@ -7222,7 +7499,8 @@ window.DB = {
    "sec": 480,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 330
   },
   {
    "id": 462,
@@ -7237,7 +7515,8 @@ window.DB = {
    "sec": 750,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 540
   },
   {
    "id": 463,
@@ -7252,7 +7531,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 270
   },
   {
    "id": 464,
@@ -7267,7 +7547,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 375
   },
   {
    "id": 465,
@@ -7297,7 +7578,8 @@ window.DB = {
    "sec": 450,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 300
   },
   {
    "id": 467,
@@ -7312,7 +7594,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 390
   },
   {
    "id": 468,
@@ -7327,7 +7610,8 @@ window.DB = {
    "sec": 390,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 255
   },
   {
    "id": 469,
@@ -7342,7 +7626,8 @@ window.DB = {
    "sec": 570,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 375
   },
   {
    "id": 470,
@@ -7357,7 +7642,8 @@ window.DB = {
    "sec": 360,
    "secMax": null,
    "agi": "kodak",
-   "src": "tmax"
+   "src": "tmax",
+   "sec24": 240
   },
   {
    "id": 471,

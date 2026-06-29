@@ -204,6 +204,17 @@
   .chatbar button{flex:none;width:52px;border:none;border-radius:12px;cursor:pointer;color:#1a1206;
        background:linear-gradient(180deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center}
   .chatbar button svg{width:22px;height:22px}
+
+  /* strumenti */
+  .ttout{font-family:var(--mono);font-size:1.45rem;font-weight:700;color:var(--accent2);
+         background:var(--chip);border:1px solid var(--line2);border-radius:12px;
+         padding:13px 15px;margin-top:8px;line-height:1.3}
+  .ttout small{font-size:.85rem;color:var(--muted);font-weight:400}
+  .ttout b{color:var(--accent2)}
+  .ttnote{font-size:.82rem;color:var(--muted);margin-top:9px;line-height:1.5}
+  .tt input{width:100%;background:var(--chip);color:var(--txt);border:1px solid var(--line2);
+            border-radius:12px;padding:12px 14px;font-size:1rem;font-family:inherit;min-height:50px}
+  .tt input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
 </style>
 </head>
 <body>
@@ -226,6 +237,7 @@
   <div class="tabs">
     <button class="tab active" id="tab-btn-chat" type="button">Chat</button>
     <button class="tab" id="tab-btn-manual" type="button">Tendine</button>
+    <button class="tab" id="tab-btn-tools" type="button">Strumenti</button>
   </div>
 
   <div id="tab-chat">
@@ -306,6 +318,29 @@
     <div class="src" id="r-src"></div>
     <div class="fallback" id="r-compare"></div>
   </div>
+  </div>
+
+  <div id="tab-tools" class="hide tt">
+    <div class="card sec">
+      <h2>Reciprocità — pose lunghe</h2>
+      <p class="sub" style="margin:.3rem 0 0">Oltre ~1 s il tempo misurato va allungato. Dimmi la pellicola e il tempo letto dall'esposimetro.</p>
+      <label class="lbl" for="rc-film" style="margin-top:13px">Pellicola</label>
+      <select id="rc-film"></select>
+      <label class="lbl" for="rc-in" style="margin-top:13px">Tempo misurato (secondi)</label>
+      <input id="rc-in" type="number" min="0" step="0.5" inputmode="decimal" placeholder="es. 2">
+      <div class="ttout" id="rc-out">—</div>
+      <div class="ttnote" id="rc-note"></div>
+    </div>
+    <div class="card sec">
+      <h2>Diluizione — quanta chimica</h2>
+      <p class="sub" style="margin:.3rem 0 0">Volume della tank + diluizione → ml di rivelatore e acqua.</p>
+      <label class="lbl" for="ch-vol" style="margin-top:13px">Volume tank (ml)</label>
+      <input id="ch-vol" type="number" min="0" step="10" inputmode="numeric" placeholder="es. 500">
+      <label class="lbl" for="ch-dil" style="margin-top:13px">Diluizione</label>
+      <input id="ch-dil" type="text" autocomplete="off" placeholder="es. 1+50  (oppure 1+25, stock)">
+      <div class="ttout" id="ch-out">—</div>
+      <div class="ttnote">Controlla la quantità minima di rivelatore per rullo: alcuni concentrati (es. Rodinal, HC-110) richiedono un minimo (~3–5 ml) per sviluppare bene.</div>
+    </div>
   </div>
 
   <div class="card sec">
@@ -425,6 +460,14 @@
 
   function fmt(sec){var m=Math.floor(sec/60),s=sec%60;return m+":"+(s<10?"0":"")+s;}
   function filmById(id){return DB.films.find(function(f){return f.id===id;});}
+  function adjustForTemp(rec,T){
+    if(Math.abs(T-20)<0.01) return {sec:rec.sec,secMax:rec.secMax,exact:true,changed:false};
+    var R=DB.meta.roundSec, f, exact;
+    if(rec.sec24){ f=Math.exp((Math.log(rec.sec24/rec.sec)/4)*(T-20)); exact=true; }
+    else { f=Math.pow(DB.meta.tempCoeff,T-20); exact=false; }
+    return {sec:Math.round(rec.sec*f/R)*R,
+            secMax:rec.secMax?Math.round(rec.secMax*f/R)*R:null, exact:exact, changed:true};
+  }
 
   var FRAC={0:"",1:"⅓",2:"⅔"};
   function stopsLabel(ei,box){
@@ -527,16 +570,15 @@
     $("time").innerHTML = fmt(r.sec) + (r.secMax ? " <small>– "+fmt(r.secMax)+"</small>" : "");
     $("rangenote").textContent = r.secMax ? "Il produttore indica un intervallo (min–max)." : "";
 
-    var T=+tempEl.value, base=r.sec, comp=$("comp");
+    var T=+tempEl.value, comp=$("comp");
     if(Math.abs(T-20)>0.01){
-      var factor=Math.pow(DB.meta.tempCoeff, T-20);
-      var cs=Math.round(base*factor/DB.meta.roundSec)*DB.meta.roundSec;
+      var a=adjustForTemp(r,T);
       comp.style.display="block";
-      comp.innerHTML="A "+T+" °C (stima): <b>"+fmt(cs)+"</b>"+
-        (r.secMax?" – "+fmt(Math.round(r.secMax*factor/DB.meta.roundSec)*DB.meta.roundSec):"")+
-        " &nbsp;<span style='color:var(--muted);font-size:.85em'>(20 °C = "+fmt(base)+")</span>";
-      timer.set(cs);
-    } else { comp.style.display="none"; timer.set(base); }
+      comp.innerHTML="A "+T+" °C "+(a.exact?"(da datasheet)":"(stima)")+": <b>"+fmt(a.sec)+"</b>"+
+        (a.secMax?" – "+fmt(a.secMax):"")+
+        " &nbsp;<span style='color:var(--muted);font-size:.85em'>(20 °C = "+fmt(r.sec)+")</span>";
+      timer.set(a.sec);
+    } else { comp.style.display="none"; timer.set(r.sec); }
 
     $("r-dil").textContent = DIL_LABEL(r.dilution);
     $("r-temp").textContent = (+tempEl.value)+" °C";
@@ -877,9 +919,9 @@
     var timeStr=fmt(rec.sec)+(rec.secMax?" <small>- "+fmt(rec.secMax)+"</small>":"");
     var timerSec=rec.sec, compStr="";
     if(Math.abs(T-20)>0.01){
-      var factor=Math.pow(DB.meta.tempCoeff,T-20);
-      var cs=Math.round(rec.sec*factor/DB.meta.roundSec)*DB.meta.roundSec; timerSec=cs;
-      compStr="<span class='tag'>A "+T+"°C &asymp; <b style='color:var(--accent2)'>"+fmt(cs)+"</b> (stima)</span>";
+      var a=adjustForTemp(rec,T); timerSec=a.sec;
+      compStr="<span class='tag'>A "+T+"°C &asymp; <b style='color:var(--accent2)'>"+fmt(a.sec)+
+        "</b> "+(a.exact?"(datasheet)":"(stima)")+"</span>";
     }
     var src=srcOf[rec.src];
     var html="<div class='rcard'>"+
@@ -927,13 +969,75 @@
       .catch(function(){addBot("Non ho capito. Prova con: pellicola + rivelatore + ISO.");});
   }
 
-  function showTab(which){var chat=which==="chat";
-    $("tab-chat").classList.toggle("hide",!chat);$("tab-manual").classList.toggle("hide",chat);
-    $("tab-btn-chat").classList.toggle("active",chat);$("tab-btn-manual").classList.toggle("active",!chat);}
+  function showTab(which){
+    ["chat","manual","tools"].forEach(function(t){
+      $("tab-"+t).classList.toggle("hide",t!==which);
+      $("tab-btn-"+t).classList.toggle("active",t===which);
+    });
+    if(which==="tools") initTools();
+  }
   $("tab-btn-chat").onclick=function(){showTab("chat");};
   $("tab-btn-manual").onclick=function(){showTab("manual");};
+  $("tab-btn-tools").onclick=function(){showTab("tools");};
   $("chatsend").onclick=function(){var v=cin.value;cin.value="";handle(v);};
   cin.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();$("chatsend").click();}});
+
+  // ---- strumenti: reciprocità + chimica ----
+  function logInterp(x0,y0,x1,y1,x){
+    var t=(Math.log(x)-Math.log(x0))/(Math.log(x1)-Math.log(x0));
+    return Math.exp(Math.log(y0)+t*(Math.log(y1)-Math.log(y0)));
+  }
+  function reciprocity(film,tm){
+    var r=film&&film.recip; if(!r||!(tm>0)) return null;
+    if(tm<1) return tm;
+    if(r.type==="power") return Math.pow(tm,r.p);
+    var pts=r.points.map(function(p){return r.type==="foma"?[p[0],p[0]*p[1]]:[p[0],p[1]];});
+    if(tm<=pts[0][0]) return logInterp(1,1,pts[0][0],pts[0][1],tm);
+    for(var i=0;i<pts.length-1;i++) if(tm<=pts[i+1][0]) return logInterp(pts[i][0],pts[i][1],pts[i+1][0],pts[i+1][1],tm);
+    var n=pts.length; return logInterp(pts[n-2][0],pts[n-2][1],pts[n-1][0],pts[n-1][1],tm);
+  }
+  function recipLabel(film){var r=film&&film.recip; if(!r) return "";
+    if(r.type==="power") return "Ta = Tm^"+(""+r.p).replace(".",",")+" (Ilford)";
+    if(r.type==="table") return "tabella Kodak (datasheet)";
+    return "fattore Schwarzschild (Foma)";
+  }
+  function fmtSecs(s){
+    if(s<60) return ((s<10?(Math.round(s*10)/10):Math.round(s))+"").replace(".",",")+" s";
+    var m=Math.floor(s/60),r=Math.round(s%60); return m+" min "+(r<10?"0":"")+r+" s";
+  }
+  var toolsReady=false;
+  function initTools(){
+    if(toolsReady) return; toolsReady=true;
+    var sel=$("rc-film");
+    DB.films.forEach(function(f){var o=document.createElement("option");
+      o.value=f.id; o.textContent=f.brand+" "+f.model.split(" (")[0]; sel.appendChild(o);});
+    if(chatState.film) sel.value=chatState.film;
+    sel.oninput=updateRecip; $("rc-in").oninput=updateRecip;
+    $("ch-vol").oninput=updateChem; $("ch-dil").oninput=updateChem;
+    updateRecip(); updateChem();
+  }
+  function updateRecip(){
+    var f=filmById($("rc-film").value), tm=parseFloat($("rc-in").value), out=$("rc-out");
+    $("rc-note").textContent=f?recipLabel(f):"";
+    if(!(tm>0)){ out.textContent="—"; return; }
+    if(tm<1){ out.innerHTML="<small>Sotto ~1 s nessuna correzione: usa il tempo misurato.</small>"; return; }
+    var ta=reciprocity(f,tm); if(ta==null){ out.textContent="—"; return; }
+    var stops=Math.log(ta/tm)/Math.log(2);
+    out.innerHTML="Imposta <b>"+fmtSecs(ta)+"</b> <small>(misurato "+fmtSecs(tm)+
+      ", +"+(Math.round(stops*10)/10).toString().replace(".",",")+" stop)</small>";
+  }
+  function updateChem(){
+    var vol=parseFloat($("ch-vol").value), raw=($("ch-dil").value||"").toLowerCase().trim(), out=$("ch-out");
+    if(!(vol>0)){ out.textContent="—"; return; }
+    var parts=null;
+    if(/^(stock|puro|non diluit\w*|liscio|1\+0)$/.test(raw)) parts=1;
+    else { var m=raw.match(/1\s*[\+:]\s*(\d+(?:[.,]\d+)?)/); if(m) parts=1+parseFloat(m[1].replace(",",".")); }
+    if(parts==null){ out.innerHTML="<small>Scrivi la diluizione come 1+50 (oppure stock).</small>"; return; }
+    var dev=vol/parts, water=vol-dev;
+    out.innerHTML="Rivelatore <b>"+(Math.round(dev*10)/10+"").replace(".",",")+" ml</b> + acqua <b>"+
+      (Math.round(water*10)/10+"").replace(".",",")+" ml</b> <small>("+(parts===1?"stock":("1+"+(parts-1)))+")</small>";
+  }
+
   botWelcome();
 })();
 </script>

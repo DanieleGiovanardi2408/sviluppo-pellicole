@@ -70,6 +70,89 @@ SOURCES = {
                    "https://www.fomafoto.com/div/teknisk/film/F_pan_400_en.pdf"),
 }
 
+# --- Reciprocita' (pose lunghe). power: Ta=Tm^p (Ilford/Kentmere).
+#     table: [Tm,Ta] secondi (Kodak). foma: [Tm, fattore] (Ta=Tm*fattore).
+RECIP = {
+    "ilford-hp5-plus":   {"type": "power", "p": 1.31},
+    "ilford-fp4-plus":   {"type": "power", "p": 1.26},
+    "ilford-delta-100":  {"type": "power", "p": 1.26},
+    "ilford-delta-400":  {"type": "power", "p": 1.41},
+    "ilford-delta-3200": {"type": "power", "p": 1.33},
+    "ilford-pan-f-plus": {"type": "power", "p": 1.33},
+    "kentmere-pan-100":  {"type": "power", "p": 1.26},
+    "kentmere-pan-400":  {"type": "power", "p": 1.30},
+    "kodak-tri-x-400":   {"type": "table", "points": [[1, 2], [10, 50], [100, 1200]]},
+    "kodak-tmax-400":    {"type": "table", "points": [[1, 1.26], [10, 15], [100, 300]]},
+    "kodak-tmax-100":    {"type": "table", "points": [[1, 1.26], [10, 15], [100, 200]]},
+    "foma-fomapan-100":  {"type": "foma", "points": [[1, 2], [10, 8], [100, 16]]},
+    "foma-fomapan-200":  {"type": "foma", "points": [[1, 3], [10, 9], [100, 18]]},
+    "foma-fomapan-400":  {"type": "foma", "points": [[1, 1.5], [10, 6], [100, 8]]},
+}
+
+# --- Tempi reali a 24 C (dove il datasheet li fornisce). Stesso formato delle righe 20 C.
+ROWS24 = {
+ "ilford-delta-400": [
+   ("ddx","1+4",{200:"4:30",400:"5:30",500:"7:00",800:"7:30",1600:"9:30",3200:"13:00"}),
+   ("ilfosol3","1+9",{200:"4:30",400:"6:00",800:"10:30"}),
+   ("ilfosol3","1+14",{200:"6:00",400:"8:30",800:"15:30"}),
+   ("ilfotec-hc","1+15",{800:"4:30",1600:"5:30",3200:"8:00"}),
+   ("ilfotec-hc","1+31",{200:"4:00",400:"5:00",800:"7:00",1600:"10:00"}),
+   ("ilfotec-lc29","1+9",{800:"4:30",1600:"5:30",3200:"8:00"}),
+   ("ilfotec-lc29","1+19",{200:"4:00",400:"5:00",800:"7:00",1600:"10:00"}),
+   ("ilfotec-lc29","1+29",{200:"5:30",400:"7:30",800:"11:00",1600:"16:00"}),
+   ("id11","stock",{200:"5:30",400:"8:00",800:"9:00",1600:"11:30",3200:"15:00"}),
+   ("id11","1+1",{200:"8:00",400:"11:30",800:"14:00",1600:"18:00"}),
+   ("id11","1+3",{200:"14:00",400:"19:30"}),
+   ("microphen","stock",{200:"4:00",400:"5:00",500:"6:00",800:"6:30",1600:"7:30",3200:"10:00"}),
+   ("microphen","1+1",{200:"7:00",400:"9:00",500:"11:00",800:"12:00",1600:"15:30"}),
+   ("microphen","1+3",{200:"11:30",400:"16:00",500:"20:00"}),
+   ("perceptol","stock",{200:"7:00",250:"9:00"}),
+   ("perceptol","1+1",{200:"9:00",320:"11:30"}),
+   ("perceptol","1+3",{200:"14:30",320:"17:30"}),
+   ("rodinal","1+25",{200:"5:00",400:"7:00",800:"16:00"}),
+   ("rodinal","1+50",{200:"9:30",400:"16:00"}),
+   ("d76","stock",{200:"5:30",400:"8:00",800:"9:00",1600:"11:30",3200:"15:00"}),
+   ("d76","1+1",{200:"8:00",400:"11:30",800:"14:00",1600:"18:00"}),
+   ("d76","1+3",{200:"14:00",400:"19:30"}),
+   ("hc110","A",{800:"4:30",1600:"5:30",3200:"8:00"}),
+   ("hc110","B",{200:"4:00",400:"5:00",800:"7:00",1600:"10:00"}),
+   ("tmax-dev","1+4",{200:"4:00",400:"5:00",500:"5:30",800:"7:00",1600:"8:30",3200:"11:00"}),
+   ("xtol","stock",{200:"4:00",400:"4:30",500:"6:00",800:"7:30",1600:"9:30",3200:"12:00"}),
+   ("xtol","1+1",{200:"6:30",400:"8:30",500:"9:30",800:"11:30",1600:"14:00",3200:"18:00"}),
+ ],
+ "kodak-tri-x-400": [
+   ("tmax-dev","stock",{400:"4:45",800:"4:45",1600:"7:00"}),
+   ("tmax-rs","stock",{400:"3:30",800:"3:30",1600:"6:00",3200:"7:30"}),
+   ("hc110","B",{400:"2:30",800:"2:30",1600:"4:15"}),
+   ("d76","stock",{400:"4:45",800:"4:45",1600:"6:30",3200:"7:30"}),
+   ("d76","1+1",{400:"7:45",800:"7:45",1600:"10:45",3200:"12:45"}),
+   ("xtol","stock",{400:"4:45",800:"4:45",1600:"6:45",3200:"8:00"}),
+   ("xtol","1+1",{400:"7:15",800:"7:15",1600:"10:30",3200:"12:15"}),
+ ],
+ "kodak-tmax-400": [
+   ("d76","stock",{400:"5:30"}),
+   ("d76","1+1",{400:"9:00"}),
+   ("xtol","stock",{400:"4:30"}),
+   ("xtol","1+1",{400:"7:00"}),
+   ("hc110","B",{400:"4:30"}),
+   ("tmax-dev","1+4",{400:"6:00"}),
+ ],
+ "kodak-tmax-100": [
+   ("d76","stock",{100:"4:15"}),
+   ("d76","1+1",{100:"6:15"}),
+   ("xtol","stock",{100:"5:00"}),
+   ("xtol","1+1",{100:"6:30"}),
+   ("hc110","B",{100:"4:00"}),
+   ("tmax-dev","1+4",{100:"6:15"}),
+ ],
+ "ilford-delta-3200": [
+   ("ddx","1+4",{800:"5:00",1600:"6:00",3200:"7:00",6400:"9:00",12500:"12:00"}),
+   ("id11","stock",{400:"6:00",800:"7:00",1600:"8:00",3200:"9:00",6400:"11:00",12500:"13:30"}),
+   ("microphen","stock",{800:"5:00",1600:"6:00",3200:"7:00",6400:"9:30",12500:"13:30"}),
+   ("ilfosol3","1+9",{400:"5:30",800:"7:00",1600:"8:00",3200:"9:00",6400:"15:30"}),
+ ],
+}
+
 # --- Pellicole + tabelle tempi (20 C). Tuple riga: (dev, dilution, {EI:"m:ss"})
 #     opzionale 4o elemento = formati specifici per quella riga.
 FILMS = [
@@ -370,8 +453,15 @@ def parse_time(tok):
 
 def main():
     dev_ids = {d[0] for d in DEVELOPERS}
+    dict24 = {}
+    for fid, rows in ROWS24.items():
+        for row in rows:
+            dev24, dil24, times24 = row[0], row[1], row[2]
+            for ei24, tok24 in times24.items():
+                dict24[(fid, dev24, dil24, ei24)] = parse_time(tok24)[0]
     recipes = []
     rid = 0
+    n24 = 0
     for f in FILMS:
         for row in f["rows"]:
             dev, dil, times = row[0], row[1], row[2]
@@ -380,15 +470,20 @@ def main():
                 raise ValueError("developer sconosciuto %r in %s" % (dev, f["id"]))
             for ei, tok in times.items():
                 lo, hi = parse_time(tok)
-                recipes.append({
+                rec = {
                     "id": rid, "film": f["id"], "dev": dev, "dilution": dil,
                     "formats": row_formats, "ei": ei,
                     "sec": lo, "secMax": hi, "agi": f["agi"], "src": f["src"],
-                })
+                }
+                s24 = dict24.get((f["id"], dev, dil, ei))
+                if s24 is not None:
+                    rec["sec24"] = s24
+                    n24 += 1
+                recipes.append(rec)
                 rid += 1
     films_out = [{"id":f["id"],"brand":f["brand"],"model":f["model"],
                   "box":f["box"],"formats":f["formats"],
-                  "note":f.get("note","")} for f in FILMS]
+                  "note":f.get("note",""),"recip":RECIP.get(f["id"])} for f in FILMS]
     db = {
         "meta": {
             "version": 1,
@@ -410,8 +505,8 @@ def main():
         fh.write(js)
     with open("data.json", "w", encoding="utf-8") as fh:
         json.dump(db, fh, ensure_ascii=False, indent=1)
-    print("OK: %d pellicole, %d ricette, %d sviluppatori"
-          % (len(films_out), len(recipes), len(DEVELOPERS)))
+    print("OK: %d pellicole, %d ricette, %d sviluppatori, %d con tempo 24C"
+          % (len(films_out), len(recipes), len(DEVELOPERS), n24))
 
 if __name__ == "__main__":
     main()
