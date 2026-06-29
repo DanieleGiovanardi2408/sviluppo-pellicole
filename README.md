@@ -47,6 +47,25 @@ vercel --prod     # per pubblicare in produzione
 2. Su vercel.com → *Add New Project* → importa il repo.
 3. Framework Preset: **Other**. Lascia vuoti build/output. → *Deploy*.
 
+## Consigli + Feedback in inbox (opzionale)
+
+L'app include una sezione **Consigli** (diagnostica: negativi densi/chiari/contrastati →
+cosa correggere) e un **form di feedback** che allega in automatico la ricetta scelta
+(pellicola, rivelatore, diluizione, EI, temperatura, tempo).
+
+Di default il pulsante "Invia feedback" apre l'app di posta del visitatore già compilata
+verso `fde.llc2023@gmail.com`. Per riceverli **direttamente in inbox** (senza dipendere
+dall'app di posta di chi scrive, e senza esporre la tua email nel sito):
+
+1. Vai su <https://web3forms.com>, inserisci la tua email, copia l'**Access Key** (gratis,
+   nessun account; piano free 250 invii/mese).
+2. In `index.html`, in cima allo script, incolla la chiave:
+   ```js
+   var WEB3FORMS_KEY = "la-tua-access-key";
+   ```
+3. Salva → `git commit -m "feedback"` → `git push`. Vercel ri-pubblica e i feedback
+   arrivano alla mail collegata alla chiave.
+
 ## Aggiungere o correggere una pellicola
 
 Tutto vive in `build_data.py`. Esempio di una riga di tempi (a 20 °C):

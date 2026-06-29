@@ -3,91 +3,176 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0c0e">
 <title>Sviluppo Pellicole B/N</title>
 <style>
   :root{
-    --bg:#0e1013; --card:#171a20; --card2:#1f232b; --line:#2c313b;
-    --txt:#eef1f6; --muted:#9aa3b2; --accent:#f0a830; --accent-d:#caa;
-    --push:#ff6b5e; --pull:#5ea0ff; --ok:#54c98a; --radius:14px;
-    font-synthesis:none;
+    --bg:#0b0c0e; --card-a:#16181e; --card-b:#101218; --chip:#1b1e25;
+    --line:#272b34; --line2:#333845;
+    --txt:#eceff4; --muted:#929aa8; --faint:#6c7383;
+    --accent:#ff8a3d; --accent2:#ffb35c; --glow:rgba(255,138,61,.35);
+    --push:#ff6f61; --pull:#5ea0ff; --ok:#5fce96;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+    --radius:16px;
   }
   *{box-sizing:border-box}
   html,body{margin:0}
   body{
-    background:var(--bg); color:var(--txt); -webkit-text-size-adjust:100%;
+    color:var(--txt); -webkit-text-size-adjust:100%; min-height:100vh;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.5; padding:env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 40px);
+    line-height:1.5;
+    background:
+      radial-gradient(125% 80% at 50% -12%, #2a1c11 0%, #120f0e 38%, var(--bg) 72%) fixed;
+    padding:env(safe-area-inset-top) 16px calc(env(safe-area-inset-bottom) + 48px);
   }
-  .wrap{max-width:560px;margin:0 auto}
-  header{padding:26px 2px 10px}
-  h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:.2px}
-  .sub{color:var(--muted);font-size:.92rem;margin:0}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-        padding:16px;margin-top:16px}
-  .field{margin:0 0 14px}
-  .field:last-child{margin-bottom:0}
-  label.lbl{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.6px;
-            color:var(--muted);margin:0 0 6px}
+  .wrap{max-width:600px;margin:0 auto}
+  a{color:var(--accent2);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* header */
+  header{padding:30px 4px 6px}
+  .brand{display:flex;align-items:center;gap:11px}
+  .logo{width:30px;height:30px;color:var(--accent);flex:none;filter:drop-shadow(0 0 10px var(--glow))}
+  h1{font-size:1.4rem;margin:0;letter-spacing:.2px;font-weight:700}
+  .sub{color:var(--muted);font-size:.92rem;margin:8px 2px 0}
+  .filmstrip{height:16px;border-radius:5px;background:#1a1d24;position:relative;overflow:hidden;
+             margin:16px 0 2px;border:1px solid var(--line)}
+  .filmstrip::before,.filmstrip::after{content:"";position:absolute;left:0;right:0;height:4px;
+             background:repeating-linear-gradient(90deg,var(--bg) 0 7px,transparent 7px 15px)}
+  .filmstrip::before{top:3px}.filmstrip::after{bottom:3px}
+
+  /* cards */
+  .card{background:linear-gradient(180deg,var(--card-a),var(--card-b));
+        border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-top:16px;
+        box-shadow:0 1px 0 rgba(255,255,255,.04) inset, 0 18px 40px -28px #000}
+  .sec h2{font-size:1.06rem;margin:0 0 2px;font-weight:700;display:flex;align-items:center;gap:8px}
+  .sec h2::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);
+                  box-shadow:0 0 8px var(--glow)}
+
+  /* fields */
+  .field{margin:0 0 14px}.field:last-child{margin-bottom:0}
+  label.lbl{display:block;font-size:.74rem;text-transform:uppercase;letter-spacing:.7px;
+            color:var(--muted);margin:0 0 7px;font-weight:600}
   select{
-    width:100%;min-height:48px;background:var(--card2);color:var(--txt);
-    border:1px solid var(--line);border-radius:10px;padding:11px 38px 11px 13px;
-    font-size:1.05rem;appearance:none;-webkit-appearance:none;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='3'><path d='M6 9l6 6 6-6'/></svg>");
-    background-repeat:no-repeat;background-position:right 13px center;
+    width:100%;min-height:52px;color:var(--txt);background:var(--chip);
+    border:1px solid var(--line2);border-radius:12px;padding:13px 40px 13px 14px;
+    font-size:1.05rem;appearance:none;-webkit-appearance:none;transition:border-color .15s, box-shadow .15s;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23929aa8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");
+    background-repeat:no-repeat;background-position:right 14px center;
   }
-  select:disabled{opacity:.4}
-  select:focus{outline:none;border-color:var(--accent)}
+  select:disabled{opacity:.38}
+  select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+  optgroup{color:var(--muted);background:#14161c}
+  option{color:var(--txt);background:#14161c}
+
   .temp-row{display:flex;align-items:center;gap:14px}
-  .temp-row input[type=range]{flex:1;accent-color:var(--accent);height:30px}
-  .temp-val{font-variant-numeric:tabular-nums;font-size:1.1rem;min-width:62px;text-align:right}
-  .badge{display:inline-block;font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px;
-         vertical-align:middle;margin-left:7px}
+  input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:6px;
+    background:linear-gradient(90deg,var(--accent),var(--accent2));outline:none}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+    background:#fff;border:3px solid var(--accent);box-shadow:0 2px 8px #000;cursor:pointer}
+  input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;
+    border:3px solid var(--accent);cursor:pointer}
+  .temp-val{font-family:var(--mono);font-size:1.1rem;min-width:66px;text-align:right;color:var(--accent2)}
+
+  /* badges */
+  .badge{display:inline-block;font-size:.74rem;font-weight:700;padding:3px 10px;border-radius:999px;
+         vertical-align:middle;letter-spacing:.2px}
   .b-nom{background:#2a3340;color:#cfe0ff}
-  .b-push{background:rgba(255,107,94,.16);color:var(--push)}
+  .b-push{background:rgba(255,111,97,.16);color:var(--push)}
   .b-pull{background:rgba(94,160,255,.16);color:var(--pull)}
 
   /* result */
-  #result{display:none}
-  .recipe{text-align:center;padding:6px 0 2px}
-  .recipe .time{font-size:3.5rem;font-weight:700;font-variant-numeric:tabular-nums;
-                line-height:1.05;letter-spacing:1px}
-  .recipe .time small{font-size:1.3rem;color:var(--muted);font-weight:600}
-  .recipe .range-note{color:var(--muted);font-size:.85rem;margin-top:2px}
-  .meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
-  .mbox{background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-  .mbox .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
-  .mbox .v{font-size:1.05rem;margin-top:2px}
-  .agit{background:var(--card2);border:1px solid var(--line);border-radius:10px;
-        padding:11px 13px;margin-top:10px;font-size:.92rem;color:#d7dde7}
-  .note{font-size:.85rem;color:var(--accent-d);margin-top:10px}
-  .comp{margin-top:12px;padding:11px 13px;border:1px dashed var(--accent);border-radius:10px;
-        background:rgba(240,168,48,.06);font-size:.95rem}
-  .comp b{color:var(--accent)}
+  #result{display:none;position:relative;overflow:hidden}
+  #result .filmstrip{margin:-16px -16px 14px;border-radius:0;border:none;border-bottom:1px solid var(--line)}
+  .recipe{text-align:center;padding:4px 0 2px}
+  .eyebrow{font-size:.74rem;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);
+           font-weight:600;margin-bottom:4px;display:flex;gap:9px;justify-content:center;align-items:center}
+  .recipe .time{font-family:var(--mono);font-size:3.7rem;font-weight:700;line-height:1.02;
+                letter-spacing:1px;color:var(--accent2);text-shadow:0 0 22px var(--glow)}
+  .recipe .time small{font-size:1.4rem;color:var(--muted);font-weight:600;text-shadow:none}
+  .recipe .range-note{color:var(--muted);font-size:.84rem;margin-top:3px}
+  .comp{margin-top:13px;padding:11px 13px;border:1px dashed var(--accent);border-radius:11px;
+        background:rgba(255,138,61,.07);font-size:.95rem;font-family:var(--mono)}
+  .comp b{color:var(--accent2)}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+  .chip{flex:1 1 30%;min-width:120px;background:var(--chip);border:1px solid var(--line);
+        border-radius:11px;padding:9px 12px}
+  .chip .k{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .chip .v{font-size:1.04rem;margin-top:2px}
+  .agit{display:flex;gap:10px;background:var(--chip);border:1px solid var(--line);border-left:3px solid var(--accent);
+        border-radius:11px;padding:11px 13px;margin-top:11px;font-size:.92rem;color:#d8dee8}
+  .note{font-size:.85rem;color:var(--accent2);margin-top:11px;opacity:.92}
 
   /* timer */
-  .timer{margin-top:14px;text-align:center}
-  .tdisplay{font-size:2.6rem;font-weight:700;font-variant-numeric:tabular-nums}
-  .tbtns{display:flex;gap:10px;margin-top:10px}
-  button.t{flex:1;min-height:50px;border:none;border-radius:11px;font-size:1.02rem;font-weight:600;
-           color:#15171c;background:var(--accent)}
-  button.t.sec{background:var(--card2);color:var(--txt);border:1px solid var(--line)}
-  button.t:active{transform:translateY(1px)}
-  .agita-cue{margin-top:8px;height:22px;font-weight:700;letter-spacing:3px;color:var(--accent);opacity:0;transition:opacity .15s}
+  .timer{margin-top:16px;text-align:center;border-top:1px solid var(--line);padding-top:16px}
+  .tdisplay{font-family:var(--mono);font-size:2.8rem;font-weight:700;letter-spacing:2px;
+            color:var(--txt);text-shadow:0 0 16px rgba(255,179,92,.18)}
+  .agita-cue{margin-top:6px;height:22px;font-weight:800;letter-spacing:5px;font-size:.95rem;
+             color:var(--accent);opacity:0;transition:opacity .12s;text-shadow:0 0 14px var(--glow)}
   .agita-cue.on{opacity:1}
+  .tbtns{display:flex;gap:11px;margin-top:12px}
+  button.t{flex:1;min-height:52px;border:none;border-radius:13px;font-size:1.04rem;font-weight:700;
+           color:#1a1206;cursor:pointer;transition:transform .06s, filter .15s;
+           background:linear-gradient(180deg,var(--accent2),var(--accent));box-shadow:0 8px 20px -10px var(--accent)}
+  button.t.sec{background:var(--chip);color:var(--txt);border:1px solid var(--line2);box-shadow:none}
+  button.t:active{transform:translateY(1px)}
+  button.t:hover{filter:brightness(1.06)}
 
-  .fallback{margin-top:16px;font-size:.9rem;color:var(--muted)}
-  a{color:var(--accent)}
-  .src{font-size:.8rem;color:var(--muted);margin-top:12px;word-break:break-word}
-  footer{margin-top:22px;font-size:.78rem;color:#6b7382;text-align:center;line-height:1.6}
-  .warn{display:none;background:rgba(255,107,94,.1);border:1px solid var(--push);
-        border-radius:10px;padding:12px;margin-top:14px;font-size:.92rem}
+  .src{font-size:.8rem;color:var(--faint);margin-top:14px;word-break:break-word}
+  .fallback{margin-top:9px;font-size:.9rem;color:var(--muted)}
+
+  .warn{display:none;background:rgba(255,111,97,.1);border:1px solid var(--push);
+        border-radius:12px;padding:13px;margin-top:14px;font-size:.93rem}
+
+  /* consigli */
+  .goldrule{background:rgba(255,138,61,.09);border:1px solid var(--accent);border-radius:11px;
+            padding:11px 13px;font-size:.92rem;margin:9px 0 4px}
+  details.tip{border:1px solid var(--line);border-radius:11px;background:var(--chip);margin-top:9px;overflow:hidden}
+  details.tip>summary{list-style:none;cursor:pointer;padding:13px 14px;font-weight:600;
+              display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .15s}
+  details.tip>summary:hover{background:#20242c}
+  details.tip>summary::-webkit-details-marker{display:none}
+  details.tip>summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1;font-weight:400}
+  details.tip[open]>summary::after{content:"\2013"}
+  details.tip[open]>summary{color:var(--accent2)}
+  details.tip .body{padding:0 14px 13px;font-size:.92rem;color:#d8dee8}
+  details.tip .body .fix{color:var(--ok);font-weight:600}
+
+  /* feedback */
+  .fb label.lbl{margin-top:13px}
+  .fb textarea,.fb input[type=email]{width:100%;background:var(--chip);color:var(--txt);
+            border:1px solid var(--line2);border-radius:12px;padding:12px 14px;font-size:1rem;
+            font-family:inherit;min-height:50px;transition:border-color .15s, box-shadow .15s}
+  .fb textarea:focus,.fb input[type=email]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+  .fb textarea{min-height:86px;resize:vertical}
+  .fb .ctx{font-size:.82rem;color:var(--muted);margin-top:9px;background:var(--chip);
+           border:1px dashed var(--line2);border-radius:9px;padding:9px 12px}
+  .fb button.send{width:100%;min-height:52px;margin-top:14px;border:none;border-radius:13px;
+           font-weight:700;font-size:1.04rem;color:#1a1206;cursor:pointer;
+           background:linear-gradient(180deg,var(--accent2),var(--accent));box-shadow:0 8px 20px -10px var(--accent)}
+  .fb button.send:active{transform:translateY(1px)}
+  .fb .msg{margin-top:11px;font-size:.92rem;display:none}
+  .fb .msg.ok{color:var(--ok);display:block}
+  .fb .msg.err{color:var(--push);display:block}
+
+  footer{margin-top:24px;font-size:.78rem;color:var(--faint);text-align:center;line-height:1.7}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <h1>Sviluppo Pellicole B/N</h1>
+    <div class="brand">
+      <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"/><line x1="14.31" y1="8" x2="20.05" y2="17.94"/>
+        <line x1="9.69" y1="8" x2="21.17" y2="8"/><line x1="7.38" y1="12" x2="13.12" y2="2.06"/>
+        <line x1="9.69" y1="16" x2="3.95" y2="6.06"/><line x1="14.31" y1="16" x2="2.83" y2="16"/>
+        <line x1="16.62" y1="12" x2="10.88" y2="21.94"/>
+      </svg>
+      <h1>Sviluppo Pellicole B/N</h1>
+    </div>
     <p class="sub">Tempi di sviluppo dai datasheet ufficiali dei produttori.</p>
+    <div class="filmstrip" aria-hidden="true"></div>
   </header>
 
   <div class="card">
@@ -108,7 +193,8 @@
       <select id="dil"></select>
     </div>
     <div class="field">
-      <label class="lbl" for="ei">ISO esposto (EI) <span id="eihint" class="badge b-nom" style="display:none"></span></label>
+      <label class="lbl" for="ei">ISO esposto (EI)
+        <span id="eihint" class="badge b-nom" style="display:none"></span></label>
       <select id="ei"></select>
     </div>
     <div class="field">
@@ -123,19 +209,23 @@
   <div class="warn" id="warn"></div>
 
   <div class="card" id="result">
+    <div class="filmstrip" aria-hidden="true"></div>
     <div class="recipe">
+      <div class="eyebrow">Tempo di sviluppo <span class="badge" id="r-badge"></span></div>
       <div class="time" id="time">--:--</div>
       <div class="range-note" id="rangenote"></div>
     </div>
     <div class="comp" id="comp" style="display:none"></div>
-    <div class="meta-grid">
-      <div class="mbox"><div class="k">Diluizione</div><div class="v" id="r-dil">—</div></div>
-      <div class="mbox"><div class="k">Temperatura rif.</div><div class="v" id="r-temp">20 °C</div></div>
+    <div class="chips">
+      <div class="chip"><span class="k">Diluizione</span><span class="v" id="r-dil">—</span></div>
+      <div class="chip"><span class="k">Temperatura</span><span class="v" id="r-temp">20 °C</span></div>
+      <div class="chip"><span class="k">ISO esposto</span><span class="v" id="r-ei">—</span></div>
     </div>
     <div class="agit" id="r-agit"></div>
     <div class="note" id="r-note" style="display:none"></div>
 
     <div class="timer">
+      <div class="eyebrow">Timer</div>
       <div class="tdisplay" id="tdisplay">--:--</div>
       <div class="agita-cue" id="agitacue">AGITA</div>
       <div class="tbtns">
@@ -146,6 +236,84 @@
 
     <div class="src" id="r-src"></div>
     <div class="fallback" id="r-compare"></div>
+  </div>
+
+  <div class="card sec">
+    <h2>Consigli — leggere gli errori</h2>
+    <div class="goldrule"><b>Regola d'oro:</b> esponi per le <b>ombre</b>, sviluppa per le
+      <b>alte luci</b>. L'esposizione decide le ombre; il tempo di sviluppo decide il contrasto.</div>
+
+    <details class="tip"><summary>Negativi troppo densi / scuri (tutto)</summary>
+      <div class="body">Probabile <b>sovrasviluppo</b> (tempo o temperatura troppo alti) o
+        sovraesposizione. <span class="fix">Correzione:</span> riduci il tempo del 10–15%, o
+        controlla l'esposizione.</div></details>
+
+    <details class="tip"><summary>Negativi troppo chiari / trasparenti</summary>
+      <div class="body">Probabile <b>sottosviluppo</b> o sottoesposizione.
+        <span class="fix">Correzione:</span> aumenta il tempo del 10–15%, o esponi di più
+        (EI più basso, es. 400 → 320).</div></details>
+
+    <details class="tip"><summary>Ombre senza dettaglio (alte luci ok)</summary>
+      <div class="body">È <b>sottoesposizione</b>: le ombre dipendono dall'esposizione, non dallo
+        sviluppo. <span class="fix">Correzione:</span> esponi di più, abbassa l'EI. Sviluppare di
+        più non recupera le ombre.</div></details>
+
+    <details class="tip"><summary>Alte luci bruciate / troppo contrasto</summary>
+      <div class="body">Probabile <b>sovrasviluppo</b>. <span class="fix">Correzione:</span>
+        riduci il tempo o agita meno spesso.</div></details>
+
+    <details class="tip"><summary>Immagine piatta / poco contrasto</summary>
+      <div class="body">Probabile <b>sottosviluppo</b>. <span class="fix">Correzione:</span>
+        aumenta il tempo (o la temperatura di 1 °C).</div></details>
+
+    <details class="tip"><summary>Grana eccessiva</summary>
+      <div class="body">Sviluppo caldo/lungo, rivelatore molto attivo (es. Rodinal) o forte push.
+        <span class="fix">Correzione:</span> rivelatore a grana fine (D-76, XTOL, Perceptol),
+        temperatura più bassa, evita push spinti.</div></details>
+
+    <details class="tip"><summary>Striature scure dai fori (35mm)</summary>
+      <div class="body">Sono <b>surge marks</b> da <b>troppa agitazione</b>.
+        <span class="fix">Correzione:</span> agita più dolcemente e meno spesso.</div></details>
+
+    <details class="tip"><summary>Macchioline chiare tonde</summary>
+      <div class="body">Sono <b>bolle d'aria</b>. <span class="fix">Correzione:</span> a inizio
+        sviluppo batti la tank sul piano per staccarle.</div></details>
+
+    <details class="tip"><summary>Velo grigio / negativi lattiginosi</summary>
+      <div class="body">Velo: chimica esausta/contaminata o temperatura alta. Aspetto lattiginoso:
+        <b>fissaggio insufficiente</b>. <span class="fix">Correzione:</span> chimica fresca; se
+        lattiginoso, rifissa con fixer nuovo.</div></details>
+  </div>
+
+  <div class="card sec fb">
+    <h2>Com'è venuto? Lascia un feedback</h2>
+    <p class="sub" style="margin:.3rem 0 0">Aiuta a correggere i tempi dove sbagliano.</p>
+
+    <label class="lbl" for="fb-esito">Esito dello sviluppo</label>
+    <select id="fb-esito">
+      <option value="">(scegli)</option>
+      <option>Perfetto</option>
+      <option>Troppo denso (scuro)</option>
+      <option>Troppo chiaro (sottile)</option>
+      <option>Troppo contrastato</option>
+      <option>Piatto, poco contrasto</option>
+      <option>Ombre vuote</option>
+      <option>Grana eccessiva</option>
+      <option>Aloni o macchie</option>
+      <option>Altro</option>
+    </select>
+
+    <label class="lbl" for="fb-note">Note (cosa hai visto / cosa cambieresti)</label>
+    <textarea id="fb-note" placeholder="es. negativi un po' densi, la prossima volta -1 minuto"></textarea>
+
+    <label class="lbl" for="fb-email">La tua email (facoltativa, se vuoi risposta)</label>
+    <input type="email" id="fb-email" placeholder="tu@esempio.it">
+
+    <div class="ctx" id="fb-ctx">Ricetta corrente: —</div>
+    <input type="checkbox" id="fb-botcheck" tabindex="-1" autocomplete="off"
+           style="position:absolute;left:-9999px" aria-hidden="true">
+    <button class="send" id="fb-send">Invia feedback</button>
+    <div class="msg" id="fb-msg"></div>
   </div>
 
   <footer>
@@ -160,6 +328,16 @@
 (function(){
   "use strict";
   var DB = window.DB;
+
+  // === CONFIG FEEDBACK ===================================================
+  // Per ricevere i feedback DIRETTAMENTE in inbox (senza aprire l'app di posta):
+  //  1) vai su https://web3forms.com  ->  inserisci la tua email  ->  copia l'Access Key
+  //  2) incollala qui sotto tra le virgolette. Fatto.
+  // Se la lasci vuota, il pulsante apre l'app di posta del visitatore gia' compilata.
+  var WEB3FORMS_KEY = "";
+  var FEEDBACK_EMAIL = "fde.llc2023@gmail.com";   // usata solo dal fallback "apri posta"
+  // =======================================================================
+
   if(!DB){document.body.innerHTML="<p style='padding:20px'>Errore: data.js non caricato.</p>";return;}
 
   var $ = function(id){return document.getElementById(id);};
@@ -172,15 +350,13 @@
   var FORMAT_LABEL={"35mm":"35mm","120":"120 (medio formato)","sheet":"Piana (sheet)"};
   var DIL_LABEL=function(d){return d==="stock"?"Stock (non diluito)":d;};
 
-  // ---- store helpers (best-effort) ----
   function save(k,v){try{localStorage.setItem("svp_"+k,v);}catch(e){}}
   function load(k){try{return localStorage.getItem("svp_"+k);}catch(e){return null;}}
 
-  // ---- formatting ----
   function fmt(sec){var m=Math.floor(sec/60),s=sec%60;return m+":"+(s<10?"0":"")+s;}
   function filmById(id){return DB.films.find(function(f){return f.id===id;});}
 
-  var FRAC={0:"",1:"⅓",2:"⅔"}; // 1/3, 2/3
+  var FRAC={0:"",1:"⅓",2:"⅔"};
   function stopsLabel(ei,box){
     var stops=Math.log(ei/box)/Math.log(2);
     var thirds=Math.round(stops*3);
@@ -188,19 +364,16 @@
     var sign=thirds>0?"+":"−";
     var a=Math.abs(thirds), whole=Math.floor(a/3), f=a%3;
     var mag=(whole?whole:"")+(FRAC[f]||"")||"0";
-    var kind=thirds>0?"Push":"Pull";
-    var cls=thirds>0?"b-push":"b-pull";
-    return {cls:cls, txt:kind+" "+sign+mag+" stop"};
+    return {cls:thirds>0?"b-push":"b-pull", txt:(thirds>0?"Push":"Pull")+" "+sign+mag+" stop"};
   }
 
-  // ---- recipe filtering ----
-  function recsFor(sel){
+  function recsFor(s){
     return DB.recipes.filter(function(r){
-      if(sel.film && r.film!==sel.film) return false;
-      if(sel.format && r.formats.indexOf(sel.format)<0) return false;
-      if(sel.dev && r.dev!==sel.dev) return false;
-      if(sel.dil!=null && r.dilution!==sel.dil) return false;
-      if(sel.ei!=null && r.ei!==sel.ei) return false;
+      if(s.film && r.film!==s.film) return false;
+      if(s.format && r.formats.indexOf(s.format)<0) return false;
+      if(s.dev && r.dev!==s.dev) return false;
+      if(s.dil!=null && r.dilution!==s.dil) return false;
+      if(s.ei!=null && r.ei!==s.ei) return false;
       return true;
     });
   }
@@ -210,76 +383,65 @@
 
   function fill(elem,items,current){
     elem.innerHTML="";
-    items.forEach(function(it){
-      var o=document.createElement("option");
-      o.value=it.value; o.textContent=it.label; elem.appendChild(o);
-    });
+    items.forEach(function(it){var o=document.createElement("option");
+      o.value=it.value; o.textContent=it.label; elem.appendChild(o);});
     elem.disabled=items.length===0;
-    var vals=items.map(function(i){return i.value;});
+    var vals=items.map(function(i){return String(i.value);});
     if(current!=null && vals.indexOf(String(current))>=0) elem.value=String(current);
   }
-
   function uniq(arr){var s=[],seen={};arr.forEach(function(x){if(!seen[x]){seen[x]=1;s.push(x);}});return s;}
 
-  // ---- populate cascade ----
   function populateFilms(){
     filmSel.innerHTML="";
     var byBrand={};
     DB.films.forEach(function(f){(byBrand[f.brand]=byBrand[f.brand]||[]).push(f);});
     Object.keys(byBrand).forEach(function(brand){
       var og=document.createElement("optgroup"); og.label=brand;
-      byBrand[brand].forEach(function(f){
-        var o=document.createElement("option");
-        o.value=f.id; o.textContent=f.brand+" "+f.model; og.appendChild(o);
-      });
+      byBrand[brand].forEach(function(f){var o=document.createElement("option");
+        o.value=f.id; o.textContent=f.brand+" "+f.model; og.appendChild(o);});
       filmSel.appendChild(og);
     });
-    var last=load("film");
-    if(last && filmById(last)) filmSel.value=last;
+    var last=load("film"); if(last && filmById(last)) filmSel.value=last;
   }
   function populateFormats(){
     var f=filmById(filmSel.value); if(!f)return;
-    var items=f.formats.map(function(x){return {value:x,label:FORMAT_LABEL[x]||x};});
-    fill(formatSel,items,formatSel.value||load("format"));
+    fill(formatSel, f.formats.map(function(x){return {value:x,label:FORMAT_LABEL[x]||x};}),
+         formatSel.value||load("format"));
   }
   function populateDevs(){
     var s=sel(); s.dev=s.dil=s.ei=null;
     var devs=uniq(recsFor(s).map(function(r){return r.dev;}));
     devs.sort(function(a,b){return devOrder[a]-devOrder[b];});
-    var items=devs.map(function(d){return {value:d,label:devName[d]};});
-    fill(devSel,items,devSel.value||load("dev"));
+    fill(devSel, devs.map(function(d){return {value:d,label:devName[d]};}), devSel.value||load("dev"));
   }
   function populateDils(){
     var s=sel(); s.dil=s.ei=null;
     var dils=uniq(recsFor(s).map(function(r){return r.dilution;}));
-    var items=dils.map(function(d){return {value:d,label:DIL_LABEL(d)};});
-    fill(dilSel,items,dilSel.value);
+    fill(dilSel, dils.map(function(d){return {value:d,label:DIL_LABEL(d)};}), dilSel.value);
   }
   function populateEis(){
-    var s=sel(); s.ei=null;
-    var f=filmById(s.film);
+    var s=sel(); s.ei=null; var f=filmById(s.film);
     var eis=uniq(recsFor(s).map(function(r){return r.ei;}));
     eis.sort(function(a,b){return a-b;});
-    var items=eis.map(function(ei){
+    fill(eiSel, eis.map(function(ei){
       var sl=stopsLabel(ei,f.box);
       var tag = sl.cls==="b-nom" ? " · box" : (sl.txt.indexOf("Push")>=0?" · push":" · pull");
       return {value:ei,label:"EI "+ei+tag};
-    });
-    fill(eiSel,items,eiSel.value);
+    }), eiSel.value);
   }
 
-  // ---- render result ----
   var timer=makeTimer();
-  function render(){
+  function render(){ renderInner(); updateFbCtx(); }
+  function renderInner(){
     var s=sel();
     tempVal.textContent=(+tempEl.value)+" °C";
     var hint=$("eihint");
     var complete = s.film&&s.format&&s.dev&&s.dil&&s.ei!=null;
     if(!complete){ $("result").style.display="none"; $("warn").style.display="none"; hint.style.display="none"; return; }
 
-    var f=filmById(s.film);
-    var sl=stopsLabel(s.ei,f.box);
+    var f=filmById(s.film), sl=stopsLabel(s.ei,f.box);
     hint.style.display="inline-block"; hint.className="badge "+sl.cls; hint.textContent=sl.txt;
+    var rb=$("r-badge"); rb.className="badge "+sl.cls; rb.textContent=sl.txt;
 
     var rs=recsFor(s);
     if(rs.length===0){
@@ -292,11 +454,9 @@
     $("warn").style.display="none";
     var r=rs[0];
 
-    // time
     $("time").innerHTML = fmt(r.sec) + (r.secMax ? " <small>– "+fmt(r.secMax)+"</small>" : "");
     $("rangenote").textContent = r.secMax ? "Il produttore indica un intervallo (min–max)." : "";
 
-    // temperature compensation
     var T=+tempEl.value, base=r.sec, comp=$("comp");
     if(Math.abs(T-20)>0.01){
       var factor=Math.pow(DB.meta.tempCoeff, T-20);
@@ -306,14 +466,12 @@
         (r.secMax?" – "+fmt(Math.round(r.secMax*factor/DB.meta.roundSec)*DB.meta.roundSec):"")+
         " &nbsp;<span style='color:var(--muted);font-size:.85em'>(20 °C = "+fmt(base)+")</span>";
       timer.set(cs);
-    } else {
-      comp.style.display="none";
-      timer.set(base);
-    }
+    } else { comp.style.display="none"; timer.set(base); }
 
     $("r-dil").textContent = DIL_LABEL(r.dilution);
     $("r-temp").textContent = (+tempEl.value)+" °C";
-    $("r-agit").innerHTML = "<b>Agitazione.</b> "+agiText[r.agi];
+    $("r-ei").textContent = "EI "+s.ei;
+    $("r-agit").innerHTML = "<span><b>Agitazione.</b> "+agiText[r.agi]+"</span>";
     var noteEl=$("r-note"), note=f.note||"";
     if(note){noteEl.style.display="block";noteEl.textContent=note;} else noteEl.style.display="none";
 
@@ -323,7 +481,6 @@
       mdcUrl(f,r.dev)+"'>Apri su Massive Dev Chart</a>.";
 
     $("result").style.display="block";
-
     save("film",s.film);save("format",s.format);save("dev",s.dev);save("temp",tempEl.value);
   }
 
@@ -334,7 +491,6 @@
       "&Developer="+encodeURIComponent(d)+"&mdc=Search&TempUnits=C";
   }
 
-  // ---- timer module ----
   function makeTimer(){
     var total=0, remaining=0, running=false, endAt=0, tick=null, lastMin=null;
     var disp=$("tdisplay"), startBtn=$("tstart"), resetBtn=$("treset"), cue=$("agitacue");
@@ -353,7 +509,6 @@
       remaining=(endAt-Date.now())/1000;
       var cm=Math.ceil(remaining);
       if(remaining<=0){remaining=0;paint();stop();beep(560,.5);setTimeout(function(){beep(560,.5);},250);return;}
-      // agitation cue at each whole minute boundary (not at the very start/end)
       if(cm!==lastMin){lastMin=cm; if(cm%60===0 && cm<total && cm>0) flashCue();}
       paint();
     }
@@ -367,9 +522,59 @@
     function stop(){running=false;startBtn.textContent="Avvia";if(tick){clearInterval(tick);tick=null;}}
     startBtn.onclick=function(){running?stop():start();};
     resetBtn.onclick=function(){stop();remaining=total;paint();};
-    return {set:function(sec){var wasRunning=running;stop();total=sec;remaining=sec;paint();
-      if(wasRunning){/*keep stopped on change*/}}};
+    return {set:function(sec){stop();total=sec;remaining=sec;paint();}};
   }
+
+  // ---- feedback ----
+  function fbContext(){
+    var s=sel();
+    if(!(s.film&&s.format&&s.dev&&s.dil&&s.ei!=null)) return null;
+    var f=filmById(s.film);
+    return {film:f.brand+" "+f.model, format:s.format, dev:devName[s.dev], dil:s.dil,
+            ei:s.ei, temp:(+tempEl.value)+" °C",
+            tempo:$("time").textContent.replace(/\s+/g," ").trim()};
+  }
+  function updateFbCtx(){
+    var box=$("fb-ctx"); if(!box) return;
+    var c=fbContext();
+    box.textContent = c
+      ? ("Ricetta: "+c.film+" · "+(FORMAT_LABEL[c.format]||c.format)+" · "+c.dev+" "+
+         DIL_LABEL(c.dil)+" · EI "+c.ei+" · "+c.temp+" → "+c.tempo)
+      : "Nessuna ricetta selezionata: puoi comunque lasciare un commento generale.";
+  }
+  (function wireFeedback(){
+    var btn=$("fb-send"); if(!btn) return;
+    btn.onclick=function(){
+      if($("fb-botcheck").checked) return;
+      var esito=$("fb-esito").value, note=$("fb-note").value.trim(), email=$("fb-email").value.trim();
+      var msg=$("fb-msg");
+      if(!esito && !note){msg.className="msg err";msg.textContent="Scegli un esito o scrivi una nota.";return;}
+      var c=fbContext();
+      var ctx=c?(c.film+" | "+c.format+" | "+c.dev+" "+c.dil+" | EI "+c.ei+" | "+c.temp+
+                 " | tempo "+c.tempo):"(nessuna ricetta selezionata)";
+      var subject="[Sviluppo Pellicole] "+(esito||"Feedback");
+      if(WEB3FORMS_KEY){
+        msg.className="msg";msg.style.display="block";msg.textContent="Invio in corso…";
+        fetch("https://api.web3forms.com/submit",{method:"POST",
+          headers:{"Content-Type":"application/json",Accept:"application/json"},
+          body:JSON.stringify({access_key:WEB3FORMS_KEY,subject:subject,
+            from_name:"App Sviluppo Pellicole",esito:esito||"-",ricetta:ctx,
+            note:note||"-",email_mittente:email||"-",botcheck:false})})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(d.success){msg.className="msg ok";msg.textContent="Grazie! Feedback inviato.";
+            $("fb-note").value="";$("fb-email").value="";$("fb-esito").value="";}
+          else{msg.className="msg err";msg.textContent="Invio non riuscito. Riprova.";}})
+        .catch(function(){msg.className="msg err";msg.textContent="Errore di rete. Riprova.";});
+      } else {
+        var body=["Esito: "+(esito||"-"),"Ricetta: "+ctx,"Note: "+(note||"-"),
+                  "Email mittente: "+(email||"-")].join("\n");
+        window.location.href="mailto:"+FEEDBACK_EMAIL+"?subject="+encodeURIComponent(subject)+
+          "&body="+encodeURIComponent(body);
+        msg.className="msg ok";msg.textContent="Apro la tua app di posta col feedback già compilato…";
+      }
+    };
+  })();
 
   // ---- wiring ----
   filmSel.onchange=function(){populateFormats();populateDevs();populateDils();populateEis();render();};
@@ -379,7 +584,6 @@
   eiSel.onchange=render;
   tempEl.oninput=render;
 
-  // ---- init ----
   populateFilms();
   var t=load("temp"); if(t){tempEl.value=t;}
   populateFormats();populateDevs();populateDils();populateEis();render();
